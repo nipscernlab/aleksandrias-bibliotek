@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alexandria Library - A curated collection of fundamental works across all areas of knowledge. Explore classic and canonical books that shaped human understanding.">
+    <meta name="keywords" content="library, books, knowledge, mathematics, philosophy, physics, biology, literature, classic books, academic books">
+    <meta name="author" content="Alexandria Library">
+    <meta property="og:title" content="Alexandria Library - Knowledge Repository">
+    <meta property="og:description" content="Explore humanity's greatest works across all fields of knowledge">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Multi-language titles -->
+    <meta name="title-en" content="Alexandria Library">
+    <meta name="title-pt" content="Biblioteca de Alexandria">
+    <meta name="title-fr" content="Bibliothèque d'Alexandrie">
+    <meta name="title-no" content="Aleksandrias bibliotek">
+    
+    <title>Alexandria Library - Knowledge Repository</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237C3AED'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/%3E%3C/svg%3E">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css">
+    
+    <style>
+        :root {
+            /* Color Palette */
+            --primary-purple: #7C3AED;
+            --secondary-purple: #A855F7;
+            --accent-purple: #C084FC;
+            --light-purple: #E9D5FF;
+            --dark-purple: #5B21B6;
+            
+            --bg-primary: #0F0F23;
+            --bg-secondary: #1A1A2E;
+            --bg-card: #16213E;
+            --bg-card-hover: #1E2749;
+            
+            --text-primary: #F8FAFC;
+            --text-secondary: #CBD5E1;
+            --text-muted: #94A3B8;
+            
+            --border-color: #334155;
+            --border-accent: var(--primary-purple);
+            
+            /* Typography */
+            --font-primary: 'Playfair Display', serif;
+            --font-secondary: 'Inter', sans-serif;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-purple: 0 0 20px rgba(124, 58, 237, 0.3);
+            
+            /* Spacing */
+            --container-padding: 2rem;
+            --section-gap: 4rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-secondary);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-purple);
+            border-radius: 4px;
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 15, 35, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem var(--container-padding);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-purple);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+        }
+        
+        .search-container {
+            position: relative;
+            max-width: 400px;
+            width: 100%;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 3rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-purple);
+            box-shadow: var(--shadow-purple);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+        
+        /* Navigation */
+        .nav {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-purple);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-purple);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Main content */
+        .main {
+            margin-top: 80px;
+            min-height: 100vh;
+        }
+        
+        /* Hero section */
+        .hero {
+            text-align: center;
+            padding: 4rem var(--container-padding);
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+        
+
+        .hero-bg {
+          position: center;
+          top: 0;
+          left: 0;
+          width: 20%;
+          max-height: 50%;
+            border-radius: 5%;
+          object-fit: cover;
+          z-index: -1;
+          filter: brightness(0.6); /* Escurece a imagem */
+        }
+
+        
+        .hero-title {
+            font-family: var(--font-primary);
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-purple), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-family: var(--font-primary);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-purple);
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        /* Section */
+        .section {
+            margin-bottom: var(--section-gap);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            font-family: var(--font-primary);
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .section-description {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Knowledge areas */
+        .knowledge-areas {
+            padding: 4rem 0;
+        }
+        
+        .area {
+            margin-bottom: 4rem;
+        }
+        
+        .area-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .area-icon {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .area-title {
+            font-family: var(--font-primary);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .area-count {
+            background: var(--bg-card);
+            color: var(--text-muted);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-left: auto;
+        }
+        
+        /* Books grid */
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .book-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .book-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-purple), var(--secondary-purple));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .book-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--primary-purple);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg), var(--shadow-purple);
+        }
+        
+        .book-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .book-cover {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--dark-purple), var(--primary-purple));
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .book-cover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+        }
+        
+        .book-title {
+            font-family: var(--font-primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+        
+        .book-author {
+            color: var(--primary-purple);
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .book-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+        }
+        
+        .book-year {
+            background: var(--bg-secondary);
+            color: var(--text-muted);
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            display: inline-block;
+        }
+        
+        /* Media section */
+        .media-section {
+            background: var(--bg-secondary);
+            padding: 4rem 0;
+            margin-top: 4rem;
+        }
+        
+        .media-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .media-category {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .media-category:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-purple);
+        }
+        
+        .media-icon {
+            width: 4rem;
+            height: 4rem;
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .media-title {
+            font-family: var(--font-primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .media-description {
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        .footer-text {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        
+        .language-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        
+        .language-tag {
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            
+            .nav {
+                gap: 1rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-stats {
+                gap: 2rem;
+            }
+            
+            .area-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            
+            .area-count {
+                margin-left: 0;
+                align-self: flex-start;
+            }
+            
+            .books-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .media-categories {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            :root {
+                --container-padding: 1rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .books-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Hide elements by default for search */
+        .book-card.hidden {
+            display: none;
+        }
+        
+        .area.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="logo">
+                <i data-lucide="library"></i>
+                Alexandria Library
+            </a>
+            
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search books, authors, topics..." id="searchInput">
+                <i data-lucide="search" class="search-icon"></i>
+            </div>
+            
+            <nav class="nav">
+                <a href="#books" class="nav-link">Books</a>
+                <a href="#media" class="nav-link">Media</a>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="hero-title">Alexandria Library</h1>
+            <img src="assets/Hypatia_(Charles_Mitchell).jpg" class="hero-bg">
+
+            <p class="hero-subtitle">
+                A curated collection of fundamental works that shaped human knowledge across all disciplines. 
+                Explore the books that built our understanding of the world.
+            </p>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" id="bookCount">127</span>
+                    <span class="stat-label">Books</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">15</span>
+                    <span class="stat-label">Areas</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">2500+</span>
+                    <span class="stat-label">Years Covered</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Knowledge Areas -->
+        <section class="knowledge-areas" id="books">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Knowledge Areas</h2>
+                    <p class="section-description">
+                        Explore fundamental works organized by major fields of human knowledge
+                    </p>
+                </div>
+
+                <!-- Mathematics -->
+                <div class="area fade-in" data-area="mathematics">
+                    <div class="area-header">
+                        <div class="area-icon">
+                            <i data-lucide="calculator"></i>
+                        </div>
+                        <h3 class="area-title">Mathematics</h3>
+                        <span class="area-count">8 books</span>
+                    </div>
+                    <div class="books-grid">
+                        <div class="book-card" data-book-info="euclid elements geometry axioms mathematics">
+                            <div class="book-cover">
+                                <i data-lucide="compass"></i>
+                            </div>
+                            <h4 class="book-title">Elements</h4>
+                            <p class="book-author">Euclid</p>
+                            <p class="book-description">One of the most influential books ever written, defining axiiomatic geometry and the deductive method that shaped mathematical thinking for over 2000 years.</p>
+                            <span class="book-year">c. 300 BC</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="newton principia mathematica physics calculus mechanics">
+                            <div class="book-cover">
+                                <i data-lucide="orbit"></i>
+                            </div>
+                            <h4 class="book-title">Principia Mathematica</h4>
+                            <p class="book-author">Isaac Newton</p>
+                            <p class="book-description">Seminal work in physics and mathematics, unifying laws of motion and gravitation while developing calculus principles.</p>
+                            <span class="book-year">1687</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="bourbaki elements mathematics axioms modern">
+                            <div class="book-cover">
+                                <i data-lucide="layers"></i>
+                            </div>
+                            <h4 class="book-title">Éléments de mathématique</h4>
+                            <p class="book-author">Nicolas Bourbaki</p>
+                            <p class="book-description">Modern mathematical treatise that revisited fundamental axiomatics and influenced 20th century mathematical education.</p>
+                            <span class="book-year">1939-</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="rudin analysis mathematics real complex">
+                            <div class="book-cover">
+                                <i data-lucide="function-square"></i>
+                            </div>
+                            <h4 class="book-title">Principles of Mathematical Analysis</h4>
+                            <p class="book-author">Walter Rudin</p>
+                            <p class="book-description">Classic textbook on real analysis, known for its rigorous approach and clear exposition of fundamental concepts.</p>
+                            <span class="book-year">1953</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="artin algebra mathematics groups rings fields">
+                            <div class="book-cover">
+                                <i data-lucide="git-branch"></i>
+                            </div>
+                            <h4 class="book-title">Algebra</h4>
+                            <p class="book-author">Michael Artin</p>
+                            <p class="book-description">Comprehensive introduction to abstract algebra, covering groups, rings, and fields with modern pedagogical approach.</p>
+                            <span class="book-year">1991</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="kolmogorov probability theory foundations statistics">
+                            <div class="book-cover">
+                                <i data-lucide="bar-chart"></i>
+                            </div>
+                            <h4 class="book-title">Foundations of the Theory of Probability</h4>
+                            <p class="book-author">Andrey Kolmogorov</p>
+                            <p class="book-description">Axiomatized probability theory, establishing the mathematical foundation for modern probability and statistics.</p>
+                            <span class="book-year">1933</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="feller probability theory applications statistics">
+                            <div class="book-cover">
+                                <i data-lucide="trending-up"></i>
+                            </div>
+                            <h4 class="book-title">An Introduction to Probability Theory and Its Applications</h4>
+                            <p class="book-author">William Feller</p>
+                            <p class="book-description">Classic work on probability theory with numerous applications and examples from various fields.</p>
+                            <span class="book-year">1950</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="fisher statistical methods mathematics statistics">
+                            <div class="book-cover">
+                                <i data-lucide="line-chart"></i>
+                            </div>
+                            <h4 class="book-title">Statistical Methods for Research Workers</h4>
+                            <p class="book-author">Ronald Fisher</p>
+                            <p class="book-description">Foundational text in statistical methodology, introducing many concepts still used in modern statistics.</p>
+                            <span class="book-year">1925</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Philosophy & Logic -->
+                <div class="area fade-in" data-area="philosophy">
+                    <div class="area-header">
+                        <div class="area-icon">
+                            <i data-lucide="brain"></i>
+                        </div>
+                        <h3 class="area-title">Philosophy & Logic</h3>
+                        <span class="area-count">12 books</span>
+                    </div>
+                    <div class="books-grid">
+                        <div class="book-card" data-book-info="aristotle organon logic philosophy ancient">
+                            <div class="book-cover">
+                                <i data-lucide="zap"></i>
+                            </div>
+                            <h4 class="book-title">Organon</h4>
+                            <p class="book-author">Aristotle</p>
+                            <p class="book-description">The earliest formal study of logic we have, forming a highly developed logical theory respected for centuries.</p>
+                            <span class="book-year">4th century BC</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="plato republic philosophy political ancient">
+                            <div class="book-cover">
+                                <i data-lucide="crown"></i>
+                            </div>
+                            <h4 class="book-title">The Republic</h4>
+                            <p class="book-author">Plato</p>
+                            <p class="book-description">Fundamental work in political philosophy and ethics, exploring justice, the ideal state, and the nature of reality.</p>
+                            <span class="book-year">c. 380 BC</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="kant critique pure reason philosophy epistemology">
+                            <div class="book-cover">
+                                <i data-lucide="eye"></i>
+                            </div>
+                            <h4 class="book-title">Critique of Pure Reason</h4>
+                            <p class="book-author">Immanuel Kant</p>
+                            <p class="book-description">One of the most influential works in philosophy, examining the limits and scope of human knowledge.</p>
+                            <span class="book-year">1781</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="hegel phenomenology spirit philosophy german idealism">
+                            <div class="book-cover">
+                                <i data-lucide="infinity"></i>
+                            </div>
+                            <h4 class="book-title">Phenomenology of Spirit</h4>
+                            <p class="book-author">Georg Wilhelm Friedrich Hegel</p>
+                            <p class="book-description">Complex work tracing the development of consciousness and self-consciousness through various stages.</p>
+                            <span class="book-year">1807</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="whitehead russell principia mathematica logic">
+                            <div class="book-cover">
+                                <i data-lucide="binary"></i>
+                            </div>
+                            <h4 class="book-title">Principia Mathematica</h4>
+                            <p class="book-author">Whitehead & Russell</p>
+                            <p class="book-description">Monumental work attempting to derive all mathematical truths from a well-defined set of axioms and inference rules.</p>
+                            <span class="book-year">1910-13</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="augustine confessions philosophy theology christianity">
+                            <div class="book-cover">
+                                <i data-lucide="heart"></i>
+                            </div>
+                            <h4 class="book-title">Confessions</h4>
+                            <p class="book-author">Augustine of Hippo</p>
+                            <p class="book-description">Autobiographical work examining the journey from sin to redemption and the nature of time and memory.</p>
+                            <span class="book-year">397-400</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="aquinas summa theologica philosophy theology medieval">
+                            <div class="book-cover">
+                                <i data-lucide="cross"></i>
+                            </div>
+                            <h4 class="book-title">Summa Theologica</h4>
+                            <p class="book-author">Thomas Aquinas</p>
+                            <p class="book-description">Comprehensive synthesis of Christian theology and Aristotelian philosophy, addressing fundamental questions about God, ethics, and human nature.</p>
+                            <span class="book-year">1265-1273</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="descartes meditations philosophy rationalism doubt">
+                            <div class="book-cover">
+                                <i data-lucide="help-circle"></i>
+                            </div>
+                            <h4 class="book-title">Meditations on First Philosophy</h4>
+                            <p class="book-author">René Descartes</p>
+                            <p class="book-description">Foundational work of modern philosophy, employing methodical doubt to establish certain knowledge and the famous "cogito ergo sum".</p>
+                            <span class="book-year">1641</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="nietzsche zarathustra philosophy existentialism nihilism">
+                            <div class="book-cover">
+                                <i data-lucide="mountain"></i>
+                            </div>
+                            <h4 class="book-title">Thus Spoke Zarathustra</h4>
+                            <p class="book-author">Friedrich Nietzsche</p>
+                            <p class="book-description">Philosophical novel exploring themes of the death of God, the Übermensch, and the eternal recurrence.</p>
+                            <span class="book-year">1883-1885</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="wittgenstein tractus philosophy language logic">
+                            <div class="book-cover">
+                                <i data-lucide="message-square"></i>
+                            </div>
+                            <h4 class="book-title">Tractus Logico-Philosophicus</h4>
+                            <p class="book-author">Ludwig Wittgenstein</p>
+                            <p class="book-description">Influential work on logic and language, proposing that philosophical problems arise from misunderstandings of language.</p>
+                            <span class="book-year">1921</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="sartre being nothingness philosophy existentialism phenomenology">
+                            <div class="book-cover">
+                                <i data-lucide="void"></i>
+                            </div>
+                            <h4 class="book-title">Being and Nothingness</h4>
+                            <p class="book-author">Jean-Paul Sartre</p>
+                            <p class="book-description">Major work of existentialist philosophy exploring human consciousness, freedom, and responsibility.</p>
+                            <span class="book-year">1943</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="rawls justice philosophy political theory fairness">
+                            <div class="book-cover">
+                                <i data-lucide="scales"></i>
+                            </div>
+                            <h4 class="book-title">A Theory of Justice</h4>
+                            <p class="book-author">John Rawls</p>
+                            <p class="book-description">Influential work in political philosophy proposing principles of justice through the "veil of ignorance" thought experiment.</p>
+                            <span class="book-year">1971</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Physics -->
+                <div class="area fade-in" data-area="physics">
+                    <div class="area-header">
+                        <div class="area-icon">
+                            <i data-lucide="atom"></i>
+                        </div>
+                        <h3 class="area-title">Physics</h3>
+                        <span class="area-count">10 books</span>
+                    </div>
+                    <div class="books-grid">
+                        <div class="book-card" data-book-info="einstein relativity physics modern spacetime">
+                            <div class="book-cover">
+                                <i data-lucide="zap"></i>
+                            </div>
+                            <h4 class="book-title">Relativity: The Special and General Theory</h4>
+                            <p class="book-author">Albert Einstein</p>
+                            <p class="book-description">Accessible explanation of the theory of relativity that revolutionized our understanding of space, time, and gravity.</p>
+                            <span class="book-year">1916</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="feynman lectures physics quantum mechanics">
+                            <div class="book-cover">
+                                <i data-lucide="radio"></i>
+                            </div>
+                            <h4 class="book-title">The Feynman Lectures on Physics</h4>
+                            <p class="book-author">Richard Feynman</p>
+                            <p class="book-description">Comprehensive and accessible introduction to physics, covering mechanics, thermodynamics, and quantum mechanics.</p>
+                            <span class="book-year">1964</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="maxwell treatise electricity magnetism electromagnetic">
+                            <div class="book-cover">
+                                <i data-lucide="bolt"></i>
+                            </div>
+                            <h4 class="book-title">A Treatise on Electricity and Magnetism</h4>
+                            <p class="book-author">James Clerk Maxwell</p>
+                            <p class="book-description">Foundational work unifying electricity and magnetism, introducing Maxwell's equations that describe electromagnetic fields.</p>
+                            <span class="book-year">1873</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="planck quantum theory physics thermal radiation">
+                            <div class="book-cover">
+                                <i data-lucide="waves"></i>
+                            </div>
+                            <h4 class="book-title">The Theory of Heat Radiation</h4>
+                            <p class="book-author">Max Planck</p>
+                            <p class="book-description">Introduced quantum theory to explain blackbody radiation, marking the birth of quantum physics.</p>
+                            <span class="book-year">1906</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="heisenberg uncertainty quantum mechanics physics">
+                            <div class="book-cover">
+                                <i data-lucide="blur"></i>
+                            </div>
+                            <h4 class="book-title">The Physical Principles of the Quantum Theory</h4>
+                            <p class="book-author">Werner Heisenberg</p>
+                            <p class="book-description">Foundational text on quantum mechanics, introducing the uncertainty principle and matrix mechanics.</p>
+                            <span class="book-year">1930</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="schrodinger wave mechanics quantum physics">
+                            <div class="book-cover">
+                                <i data-lucide="sine-wave"></i>
+                            </div>
+                            <h4 class="book-title">Collected Papers on Wave Mechanics</h4>
+                            <p class="book-author">Erwin Schrödinger</p>
+                            <p class="book-description">Development of wave mechanics and the Schrödinger equation, fundamental to quantum mechanics.</p>
+                            <span class="book-year">1928</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="bohr atomic theory quantum physics complementarity">
+                            <div class="book-cover">
+                                <i data-lucide="target"></i>
+                            </div>
+                            <h4 class="book-title">Atomic Theory and the Description of Nature</h4>
+                            <p class="book-author">Niels Bohr</p>
+                            <p class="book-description">Essays on atomic physics and quantum theory, introducing the principle of complementarity.</p>
+                            <span class="book-year">1934</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="hawking brief history time cosmology physics">
+                            <div class="book-cover">
+                                <i data-lucide="clock"></i>
+                            </div>
+                            <h4 class="book-title">A Brief History of Time</h4>
+                            <p class="book-author">Stephen Hawking</p>
+                            <p class="book-description">Popular science book explaining cosmology, black holes, and the nature of time in accessible terms.</p>
+                            <span class="book-year">1988</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="weinberg first minutes cosmology big bang">
+                            <div class="book-cover">
+                                <i data-lucide="sunrise"></i>
+                            </div>
+                            <h4 class="book-title">The First Three Minutes</h4>
+                            <p class="book-author">Steven Weinberg</p>
+                            <p class="book-description">Account of the universe's first moments after the Big Bang, explaining early cosmology and particle physics.</p>
+                            <span class="book-year">1977</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="landau lifshitz theoretical physics mechanics">
+                            <div class="book-cover">
+                                <i data-lucide="cog"></i>
+                            </div>
+                            <h4 class="book-title">Course of Theoretical Physics</h4>
+                            <p class="book-author">Landau & Lifshitz</p>
+                            <p class="book-description">Comprehensive series covering all major areas of theoretical physics with mathematical rigor.</p>
+                            <span class="book-year">1938-1981</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Biology & Medicine -->
+                <div class="area fade-in" data-area="biology">
+                    <div class="area-header">
+                        <div class="area-icon">
+                            <i data-lucide="dna"></i>
+                        </div>
+                        <h3 class="area-title">Biology & Medicine</h3>
+                        <span class="area-count">9 books</span>
+                    </div>
+                    <div class="books-grid">
+                        <div class="book-card" data-book-info="darwin origin species evolution biology natural selection">
+                            <div class="book-cover">
+                                <i data-lucide="leaf"></i>
+                            </div>
+                            <h4 class="book-title">On the Origin of Species</h4>
+                            <p class="book-author">Charles Darwin</p>
+                            <p class="book-description">Revolutionary work introducing the theory of evolution through natural selection, fundamentally changing biology.</p>
+                            <span class="book-year">1859</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="mendel genetics heredity biology plants">
+                            <div class="book-cover">
+                                <i data-lucide="flower"></i>
+                            </div>
+                            <h4 class="book-title">Experiments on Plant Hybridization</h4>
+                            <p class="book-author">Gregor Mendel</p>
+                            <p class="book-description">Foundational work in genetics, establishing the basic principles of heredity through pea plant experiments.</p>
+                            <span class="book-year">1866</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="watson crick dna structure molecular biology">
+                            <div class="book-cover">
+                                <i data-lucide="helix"></i>
+                            </div>
+                            <h4 class="book-title">The Double Helix</h4>
+                            <p class="book-author">James Watson</p>
+                            <p class="book-description">Personal account of the discovery of DNA's structure, revealing the competitive world of scientific research.</p>
+                            <span class="book-year">1968</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="vesalius anatomy medicine human body">
+                            <div class="book-cover">
+                                <i data-lucide="user"></i>
+                            </div>
+                            <h4 class="book-title">De Humani Corporis Fabrica</h4>
+                            <p class="book-author">Andreas Vesalius</p>
+                            <p class="book-description">Groundbreaking anatomical work based on human dissection, correcting centuries of anatomical errors.</p>
+                            <span class="book-year">1543</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="harvey circulation blood medicine physiology">
+                            <div class="book-cover">
+                                <i data-lucide="heart-pulse"></i>
+                            </div>
+                            <h4 class="book-title">De Motu Cordis</h4>
+                            <p class="book-author">William Harvey</p>
+                            <p class="book-description">Described the circulation of blood, revolutionizing understanding of cardiovascular physiology.</p>
+                            <span class="book-year">1628</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="gould wonderful life evolution paleontology burgess shale">
+                            <div class="book-cover">
+                                <i data-lucide="shell"></i>
+                            </div>
+                            <h4 class="book-title">Wonderful Life</h4>
+                            <p class="book-author">Stephen Jay Gould</p>
+                            <p class="book-description">Examination of the Burgess Shale fossils and their implications for understanding evolution and diversity.</p>
+                            <span class="book-year">1989</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="dawkins selfish gene evolution biology genetics">
+                            <div class="book-cover">
+                                <i data-lucide="git-branch"></i>
+                            </div>
+                            <h4 class="book-title">The Selfish Gene</h4>
+                            <p class="book-author">Richard Dawkins</p>
+                            <p class="book-description">Gene-centered view of evolution, introducing the concept of memes and evolutionary psychology.</p>
+                            <span class="book-year">1976</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="wilson sociobiology evolution behavior biology">
+                            <div class="book-cover">
+                                <i data-lucide="users"></i>
+                            </div>
+                            <h4 class="book-title">Sociobiology: The New Synthesis</h4>
+                            <p class="book-author">Edward O. Wilson</p>
+                            <p class="book-description">Systematic study of the biological basis of social behavior across species, founding sociobiology.</p>
+                            <span class="book-year">1975</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="cannon homeostasis physiology medicine body regulation">
+                            <div class="book-cover">
+                                <i data-lucide="activity"></i>
+                            </div>
+                            <h4 class="book-title">The Wisdom of the Body</h4>
+                            <p class="book-author">Walter Cannon</p>
+                            <p class="book-description">Introduction of the concept of homeostasis, explaining how the body maintains internal stability.</p>
+                            <span class="book-year">1932</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Computer Science -->
+                <div class="area fade-in" data-area="computer-science">
+                    <div class="area-header">
+                        <div class="area-icon">
+                            <i data-lucide="cpu"></i>
+                        </div>
+                        <h3 class="area-title">Computer Science</h3>
+                        <span class="area-count">8 books</span>
+                    </div>
+                    <div class="books-grid">
+                        <div class="book-card" data-book-info="turing computing machinery intelligence artificial intelligence">
+                            <div class="book-cover">
+                                <i data-lucide="brain-circuit"></i>
+                            </div>
+                            <h4 class="book-title">Computing Machinery and Intelligence</h4>
+                            <p class="book-author">Alan Turing</p>
+                            <p class="book-description">Seminal paper introducing the Turing Test and laying foundations for artificial intelligence research.</p>
+                            <span class="book-year">1950</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="knuth art computer programming algorithms">
+                            <div class="book-cover">
+                                <i data-lucide="code"></i>
+                            </div>
+                            <h4 class="book-title">The Art of Computer Programming</h4>
+                            <p class="book-author">Donald Knuth</p>
+                            <p class="book-description">Comprehensive treatise on algorithms and data structures, considered the definitive work in computer science.</p>
+                            <span class="book-year">1968-</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="von neumann computer architecture design stored program">
+                            <div class="book-cover">
+                                <i data-lucide="memory-stick"></i>
+                            </div>
+                            <h4 class="book-title">First Draft of a Report on the EDVAC</h4>
+                            <p class="book-author">John von Neumann</p>
+                            <p class="book-description">Outlined the stored-program concept, establishing the foundation for modern computer architecture.</p>
+                            <span class="book-year">1945</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="shannon information theory communication mathematics">
+                            <div class="book-cover">
+                                <i data-lucide="signal"></i>
+                            </div>
+                            <h4 class="book-title">A Mathematical Theory of Communication</h4>
+                            <p class="book-author">Claude Shannon</p>
+                            <p class="book-description">Foundational work establishing information theory and the mathematical basis of digital communication.</p>
+                            <span class="book-year">1948</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="dijkstra structured programming computer science algorithms">
+                            <div class="book-cover">
+                                <i data-lucide="layers-3"></i>
+                            </div>
+                            <h4 class="book-title">A Discipline of Programming</h4>
+                            <p class="book-author">Edsger Dijkstra</p>
+                            <p class="book-description">Systematic approach to program construction and verification, promoting structured programming principles.</p>
+                            <span class="book-year">1976</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="cormen algorithms introduction computer science data structures">
+                            <div class="book-cover">
+                                <i data-lucide="git-merge"></i>
+                            </div>
+                            <h4 class="book-title">Introduction to Algorithms</h4>
+                            <p class="book-author">Cormen, Leiserson, Rivest & Stein</p>
+                            <p class="book-description">Comprehensive textbook covering fundamental algorithms and data structures with rigorous analysis.</p>
+                            <span class="book-year">1990</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="ritchie kernighan c programming language">
+                            <div class="book-cover">
+                                <i data-lucide="terminal"></i>
+                            </div>
+                            <h4 class="book-title">The C Programming Language</h4>
+                            <p class="book-author">Kernighan & Ritchie</p>
+                            <p class="book-description">Definitive guide to the C programming language, influential in system programming and software development.</p>
+                            <span class="book-year">1978</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="brooks mythical man month software engineering">
+                            <div class="book-cover">
+                                <i data-lucide="users-cog"></i>
+                            </div>
+                            <h4 class="book-title">The Mythical Man-Month</h4>
+                            <p class="book-author">Frederick Brooks</p>
+                            <p class="book-description">Classic work on software engineering and project management, introducing Brook's Law about project complexity.</p>
+                            <span class="book-year">1975</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Literature & Languages -->
+                <div class="area fade-in" data-area="literature">
+                    <div class="area-header">
+                        <div class="area-icon">
+                            <i data-lucide="book-open"></i>
+                        </div>
+                        <h3 class="area-title">Literature & Languages</h3>
+                        <span class="area-count">10 books</span>
+                    </div>
+                    <div class="books-grid">
+                        <div class="book-card" data-book-info="shakespeare hamlet literature tragedy english">
+                            <div class="book-cover">
+                                <i data-lucide="theatre"></i>
+                            </div>
+                            <h4 class="book-title">Hamlet</h4>
+                            <p class="book-author">William Shakespeare</p>
+                            <p class="book-description">Timeless tragedy exploring themes of revenge, madness, and moral corruption in the Danish court.</p>
+                            <span class="book-year">c. 1600</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="homer odyssey epic literature ancient greek">
+                            <div class="book-cover">
+                                <i data-lucide="ship"></i>
+                            </div>
+                            <h4 class="book-title">The Odyssey</h4>
+                            <p class="book-author">Homer</p>
+                            <p class="book-description">Epic poem chronicling Odysseus's journey home after the Trojan War, foundational text of Western literature.</p>
+                            <span class="book-year">8th century BC</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="dante divine comedy literature medieval poetry">
+                            <div class="book-cover">
+                                <i data-lucide="mountain-snow"></i>
+                            </div>
+                            <h4 class="book-title">The Divine Comedy</h4>
+                            <p class="book-author">Dante Alighieri</p>
+                            <p class="book-description">Allegorical journey through Hell, Purgatory, and Paradise, masterpiece of world literature.</p>
+                            <span class="book-year">1308-1320</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="cervantes don quixote literature spanish novel">
+                            <div class="book-cover">
+                                <i data-lucide="shield"></i>
+                            </div>
+                            <h4 class="book-title">Don Quixote</h4>
+                            <p class="book-author">Miguel de Cervantes</p>
+                            <p class="book-description">Often considered the first modern novel, satirizing chivalric romances while exploring reality and idealism.</p>
+                            <span class="book-year">1605-1615</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="joyce ulysses literature modernism stream consciousness">
+                            <div class="book-cover">
+                                <i data-lucide="waves"></i>
+                            </div>
+                            <h4 class="book-title">Ulysses</h4>
+                            <p class="book-author">James Joyce</p>
+                            <p class="book-description">Modernist masterpiece employing stream-of-consciousness technique to chronicle a single day in Dublin.</p>
+                            <span class="book-year">1922</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="proust remembrance time literature french modernism">
+                            <div class="book-cover">
+                                <i data-lucide="clock-3"></i>
+                            </div>
+                            <h4 class="book-title">In Search of Lost Time</h4>
+                            <p class="book-author">Marcel Proust</p>
+                            <p class="book-description">Monumental novel exploring memory, time, and human experience through the narrator's recollections.</p>
+                            <span class="book-year">1913-1927</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="kafka metamorphosis literature existentialism alienation">
+                            <div class="book-cover">
+                                <i data-lucide="bug"></i>
+                            </div>
+                            <h4 class="book-title">The Metamorphosis</h4>
+                            <p class="book-author">Franz Kafka</p>
+                            <p class="book-description">Surreal novella about a man transformed into an insect, exploring themes of alienation and dehumanization.</p>
+                            <span class="book-year">1915</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="dostoevsky crime punishment literature russian psychology">
+                            <div class="book-cover">
+                                <i data-lucide="gavel"></i>
+                            </div>
+                            <h4 class="book-title">Crime and Punishment</h4>
+                            <p class="book-author">Fyodor Dostoevsky</p>
+                            <p class="book-description">Psychological novel exploring guilt, redemption, and the human condition through a murderer's conscience.</p>
+                            <span class="book-year">1866</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="tolstoy war peace literature russian epic">
+                            <div class="book-cover">
+                                <i data-lucide="sword"></i>
+                            </div>
+                            <h4 class="book-title">War and Peace</h4>
+                            <p class="book-author">Leo Tolstoy</p>
+                            <p class="book-description">Epic novel chronicling Russian society during the Napoleonic era, exploring history, love, and human nature.</p>
+                            <span class="book-year">1867</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="austen pride prejudice literature english novel romance">
+                            <div class="book-cover">
+                                <i data-lucide="heart-handshake"></i>
+                            </div>
+                            <h4 class="book-title">Pride and Prejudice</h4>
+                            <p class="book-author">Jane Austen</p>
+                            <p class="book-description">Social comedy of manners exploring marriage, class, and character development in Regency England.</p>
+                            <span class="book-year">1813</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Economics & Political Science -->
+                <div class="area fade-in" data-area="economics">
+                    <div class="area-header">
+                        <div class="area-icon">
+                            <i data-lucide="trending-up"></i>
+                        </div>
+                        <h3 class="area-title">Economics & Political Science</h3>
+                        <span class="area-count">8 books</span>
+                    </div>
+                    <div class="books-grid">
+                        <div class="book-card" data-book-info="smith wealth nations economics capitalism market">
+                            <div class="book-cover">
+                                <i data-lucide="coins"></i>
+                            </div>
+                            <h4 class="book-title">The Wealth of Nations</h4>
+                            <p class="book-author">Adam Smith</p>
+                            <p class="book-description">Foundational work of modern economics, introducing concepts of the invisible hand and free market principles.</p>
+                            <span class="book-year">1776</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="marx capital economics communism political economy">
+                            <div class="book-cover">
+                                <i data-lucide="factory"></i>
+                            </div>
+                            <h4 class="book-title">Das Kapital</h4>
+                            <p class="book-author">Karl Marx</p>
+                            <p class="book-description">Critique of political economy and capitalism, analyzing class struggle and economic exploitation.</p>
+                            <span class="book-year">1867-1894</span>
+                        </div>
+                        
+                        <div class="book-card" data-book-info="keynes general theory economics macroeconomics employment">
+                            <div class="book-cover">
+                                <i data-lucide="bar-chart-3"></i>
+                            </div>
+                            <h4 class="book-title">The General Theory of Employment, Interest and Money</h4>
+                            <p class="book-author">John Maynard Keynes</p>
+                            <p class="book-description">Revolutionary work in macroeconomics that challenged classical economic theory and laid foundation for modern fiscal policy.</p>
+                            <span class="book-year">1936</span>
+                        </div>
+                        
+                        <!-- Template for adding new books - Copy and modify -->
+                        <div class="book-card" data-book-info="author title topic keywords">
+                            <div class="book-cover">
+                                <i data-lucide="book"></i> <!-- Change icon -->
+                            </div>
+                            <h4 class="book-title">Book Title</h4>
+                            <p class="book-author">Author Name</p>
+                            <p class="book-description">Brief description of the book and its significance.</p>
+                            <span class="book-year">Year</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Template for New Knowledge Area -->
+                <div class="area fade-in" data-area="area-name">
+                    <div class="area-header">
+                        <div class="area-icon">
+                            <i data-lucide="book-open"></i> <!-- Change icon -->
+                        </div>
+                        <h3 class="area-title">Area Name</h3>
+                        <span class="area-count">X books</span>
+                    </div>
+                    <div class="books-grid">
+                        <!-- Copy book-card template here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Media Section -->
+        <section class="media-section" id="media">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Media Collection</h2>
+                    <p class="section-description">
+                        Explore films, music, paintings, and other cultural works that complement our literary collection
+                    </p>
+                </div>
+
+                <div class="media-categories">
+                    <div class="media-category">
+                        <div class="media-icon">
+                            <i data-lucide="film"></i>
+                        </div>
+                        <h3 class="media-title">Films</h3>
+                        <p class="media-description">
+                            Curated collection of cinematic masterpieces that explore philosophical, scientific, and cultural themes.
+                        </p>
+                    </div>
+                    
+                    <div class="media-category">
+                        <div class="media-icon">
+                            <i data-lucide="music"></i>
+                        </div>
+                        <h3 class="media-title">Music</h3>
+                        <p class="media-description">
+                            Classical compositions, avant-garde pieces, and significant musical works that shaped cultural understanding.
+                        </p>
+                    </div>
+                    
+                    <div class="media-category">
+                        <div class="media-icon">
+                            <i data-lucide="palette"></i>
+                        </div>
+                        <h3 class="media-title">Visual Arts</h3>
+                        <p class="media-description">
+                            Paintings, sculptures, and visual works that revolutionized artistic expression and cultural perception.
+                        </p>
+                    </div>
+                    
+                    <div class="media-category">
+                        <div class="media-icon">
+                            <i data-lucide="theater"></i>
+                        </div>
+                        <h3 class="media-title">Theater & Performance</h3>
+                        <p class="media-description">
+                            Dramatic works and performances that explore the human condition and societal structures.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About Alexandria Library</h2>
+                    <p class="section-description">
+                        This digital library is inspired by the ancient Library of Alexandria, aiming to preserve and organize humanity's greatest intellectual achievements. Each work has been carefully selected for its fundamental contribution to human knowledge and understanding.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">
+                © 2024 Alexandria Library - Preserving Knowledge Across Civilizations
+            </p>
+            <div class="language-tags">
+                <span class="language-tag">English: Alexandria Library</span>
+                <span class="language-tag">Português: Biblioteca de Alexandria</span>
+                <span class="language-tag">Français: Bibliothèque d'Alexandrie</span>
+                <span class="language-tag">Norsk: Aleksandrias bibliotek</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script>
+        // Initialize Lucide icons
+        window.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons(); // Agora deve funcionar!
+        });
+        
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const bookCards = document.querySelectorAll('.book-card');
+        const areas = document.querySelectorAll('.area');
+        
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            areas.forEach(area => {
+                let hasVisibleBooks = false;
+                const areaBookCards = area.querySelectorAll('.book-card');
+                
+                areaBookCards.forEach(card => {
+                    const bookInfo = card.getAttribute('data-book-info').toLowerCase();
+                    const title = card.querySelector('.book-title').textContent.toLowerCase();
+                    const author = card.querySelector('.book-author').textContent.toLowerCase();
+                    const description = card.querySelector('.book-description').textContent.toLowerCase();
+                    
+                    const isMatch = bookInfo.includes(searchTerm) || 
+                                   title.includes(searchTerm) || 
+                                   author.includes(searchTerm) || 
+                                   description.includes(searchTerm);
+                    
+                    if (isMatch || searchTerm === '') {
+                        card.classList.remove('hidden');
+                        hasVisibleBooks = true;
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+                
+                // Hide area if no books match
+                if (hasVisibleBooks || searchTerm === '') {
+                    area.classList.remove('hidden');
+                } else {
+                    area.classList.add('hidden');
+                }
+            });
+            
+            // Update book count
+            updateBookCount();
+        });
+        
+        // Update book count
+        function updateBookCount() {
+            const visibleBooks = document.querySelectorAll('.book-card:not(.hidden)').length;
+            document.getElementById('bookCount').textContent = visibleBooks;
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+        
+        // Header scroll effect
+        let lastScrollTop = 0;
+        const header = document.querySelector('.header');
+        
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // Scrolling down
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                // Scrolling up
+                header.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+        
+        // Book card hover effects
+        document.querySelectorAll('.book-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-4px) scale(1)';
+            });
+        });
+        
+        // Initial book count
+        updateBookCount();
+        
+        // Console welcome message
+        console.log(`
+        ╔═══════════════════════════════════════╗
+        ║         Alexandria Library            ║
+        ║    Knowledge Preserved & Organized    ║
+        ╚═══════════════════════════════════════╝
+        
+        Welcome to the digital Alexandria Library!
+        
+        To add new books, copy the book-card template and modify:
+        1. data-book-info: keywords for search
+        2. book-cover icon
+        3. book-title, book-author, book-description, book-year
+        
+        To add new areas, copy the area template and modify:
+        1. data-area: area identifier
+        2. area-icon
+        3. area-title, area-count
+        4. Add book-cards inside books-grid
+        `);
+    </script>
+</body>
+</html>
