@@ -1,2 +1,0 @@
-# aleksandrias-bibliotek
-Aleksandrias Bibliotek
