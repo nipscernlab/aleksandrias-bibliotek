@@ -642,8 +642,6 @@
         <!-- Hero Section -->
         <section class="hero">
             <h1 class="hero-title">Alexandria Library</h1>
-            <img src="assets/Hypatia_(Charles_Mitchell).jpg" class="hero-bg">
-
             <p class="hero-subtitle">
                 A curated collection of fundamental works that shaped human knowledge across all disciplines. 
                 Explore the books that built our understanding of the world.
@@ -651,11 +649,11 @@
             
             <div class="hero-stats">
                 <div class="stat">
-                    <span class="stat-number" id="bookCount">127</span>
+                    <span class="stat-number">420</span>
                     <span class="stat-label">Books</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number">15</span>
+                    <span class="stat-number">5</span>
                     <span class="stat-label">Areas</span>
                 </div>
                 <div class="stat">
@@ -675,712 +673,917 @@
                     </p>
                 </div>
 
-                <!-- Mathematics -->
-                <div class="area fade-in" data-area="mathematics">
+                <!-- Logic & Mathematics -->
+                <div class="area fade-in" data-area="logic-mathematics">
                     <div class="area-header">
                         <div class="area-icon">
                             <i data-lucide="calculator"></i>
                         </div>
-                        <h3 class="area-title">Mathematics</h3>
-                        <span class="area-count">8 books</span>
+                        <h3 class="area-title">Logic & Mathematics</h3>
+                        <span class="area-count">42 books</span>
                     </div>
                     <div class="books-grid">
+                        <!-- Logic Section -->
+                        <div class="book-card" data-book-info="aristotle organon logic reasoning philosophy">
+                            <div class="book-cover">
+                                <i data-lucide="brain"></i>
+                            </div>
+                            <h4 class="book-title">Organon</h4>
+                            <p class="book-author">Aristotle</p>
+                            <p class="book-description">Foundation of all logic, establishing the principles of reasoning and argumentation that dominated Western thought for millennia.</p>
+                            <span class="book-year">c. 350 BC</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="frege begriffsschrift logic modern mathematics">
+                            <div class="book-cover">
+                                <i data-lucide="share"></i>
+                            </div>
+                            <h4 class="book-title">Begriffsschrift</h4>
+                            <p class="book-author">Gottlob Frege</p>
+                            <p class="book-description">Birth of modern logic, introducing formal symbolic notation and laying groundwork for mathematical logic.</p>
+                            <span class="book-year">1879</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="russell problems philosophy logic epistemology">
+                            <div class="book-cover">
+                                <i data-lucide="help-circle"></i>
+                            </div>
+                            <h4 class="book-title">The Problems of Philosophy</h4>
+                            <p class="book-author">Bertrand Russell</p>
+                            <p class="book-description">Clear introduction to philosophical problems combining logic and epistemology, bridging classical and modern thought.</p>
+                            <span class="book-year">1912</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="copi cohen introduction logic reasoning">
+                            <div class="book-cover">
+                                <i data-lucide="network"></i>
+                            </div>
+                            <h4 class="book-title">Introduction to Logic</h4>
+                            <p class="book-author">Irving M. Copi & Carl Cohen</p>
+                            <p class="book-description">Comprehensive modern treatment of classical logic, covering both formal and informal reasoning methods.</p>
+                            <span class="book-year">1953</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="mendelson mathematical logic formal systems">
+                            <div class="book-cover">
+                                <i data-lucide="layers"></i>
+                            </div>
+                            <h4 class="book-title">Introduction to Mathematical Logic</h4>
+                            <p class="book-author">Elliott Mendelson</p>
+                            <p class="book-description">Bridge to formal systems, providing rigorous foundation for mathematical logic and proof theory.</p>
+                            <span class="book-year">1964</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="wittgenstein tractus language philosophy">
+                            <div class="book-cover">
+                                <i data-lucide="map"></i>
+                            </div>
+                            <h4 class="book-title">Tractus Logico-Philosophicus</h4>
+                            <p class="book-author">Ludwig Wittgenstein</p>
+                            <p class="book-description">Explores the limits of language and thought, profoundly influencing analytic philosophy and logic.</p>
+                            <span class="book-year">1921</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="gentzen natural deduction proof systems">
+                            <div class="book-cover">
+                                <i data-lucide="git-branch"></i>
+                            </div>
+                            <h4 class="book-title">Collected Papers</h4>
+                            <p class="book-author">Gerhard Gentzen</p>
+                            <p class="book-description">Revolutionary work on formal proof systems, introducing natural deduction and sequent calculus.</p>
+                            <span class="book-year">1935-1938</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="heyting intuitionism constructive logic">
+                            <div class="book-cover">
+                                <i data-lucide="compass"></i>
+                            </div>
+                            <h4 class="book-title">Intuitionism: An Introduction</h4>
+                            <p class="book-author">Arend Heyting</p>
+                            <p class="book-description">Foundations of intuitionistic logic, exploring constructive mathematics and alternative logical frameworks.</p>
+                            <span class="book-year">1956</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="wittgenstein philosophical investigations language">
+                            <div class="book-cover">
+                                <i data-lucide="message-circle"></i>
+                            </div>
+                            <h4 class="book-title">Philosophical Investigations</h4>
+                            <p class="book-author">Ludwig Wittgenstein</p>
+                            <p class="book-description">Language as use and meaning, fundamentally changing how we understand communication and thought.</p>
+                            <span class="book-year">1953</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="chang keisler model theory mathematics">
+                            <div class="book-cover">
+                                <i data-lucide="globe"></i>
+                            </div>
+                            <h4 class="book-title">Model Theory</h4>
+                            <p class="book-author">C.C. Chang & H.J. Keisler</p>
+                            <p class="book-description">Advanced model-theoretic methods, connecting logic with algebra and geometry through mathematical structures.</p>
+                            <span class="book-year">1973</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="martin-lof type theory constructive mathematics">
+                            <div class="book-cover">
+                                <i data-lucide="layers-3"></i>
+                            </div>
+                            <h4 class="book-title">Intuitionistic Type Theory</h4>
+                            <p class="book-author">Per Martin-Löf</p>
+                            <p class="book-description">Dependent types and constructive foundations, bridging logic, mathematics, and computer science.</p>
+                            <span class="book-year">1984</span>
+                        </div>
+
+                        <!-- Mathematics Section -->
                         <div class="book-card" data-book-info="euclid elements geometry axioms mathematics">
                             <div class="book-cover">
                                 <i data-lucide="compass"></i>
                             </div>
                             <h4 class="book-title">Elements</h4>
                             <p class="book-author">Euclid</p>
-                            <p class="book-description">One of the most influential books ever written, defining axiiomatic geometry and the deductive method that shaped mathematical thinking for over 2000 years.</p>
+                            <p class="book-description">Most influential mathematical work ever written, establishing axiomatic geometry and deductive reasoning.</p>
                             <span class="book-year">c. 300 BC</span>
                         </div>
-                        
-                        <div class="book-card" data-book-info="newton principia mathematica physics calculus mechanics">
+
+                        <div class="book-card" data-book-info="al-khwarizmi algebra calculation mathematics">
                             <div class="book-cover">
-                                <i data-lucide="orbit"></i>
+                                <i data-lucide="function-square"></i>
                             </div>
-                            <h4 class="book-title">Principia Mathematica</h4>
-                            <p class="book-author">Isaac Newton</p>
-                            <p class="book-description">Seminal work in physics and mathematics, unifying laws of motion and gravitation while developing calculus principles.</p>
-                            <span class="book-year">1687</span>
+                            <h4 class="book-title">The Compendious Book on Calculation</h4>
+                            <p class="book-author">Al-Khwarizmi</p>
+                            <p class="book-description">Birth of algebra, introducing systematic methods for solving linear and quadratic equations.</p>
+                            <span class="book-year">c. 820</span>
                         </div>
-                        
-                        <div class="book-card" data-book-info="bourbaki elements mathematics axioms modern">
+
+                        <div class="book-card" data-book-info="descartes geometry coordinate systems mathematics">
                             <div class="book-cover">
-                                <i data-lucide="layers"></i>
+                                <i data-lucide="grid-3x3"></i>
                             </div>
-                            <h4 class="book-title">Éléments de mathématique</h4>
-                            <p class="book-author">Nicolas Bourbaki</p>
-                            <p class="book-description">Modern mathematical treatise that revisited fundamental axiomatics and influenced 20th century mathematical education.</p>
-                            <span class="book-year">1939-</span>
+                            <h4 class="book-title">Geometry</h4>
+                            <p class="book-author">René Descartes</p>
+                            <p class="book-description">Revolutionary fusion of algebra and geometry through coordinate systems, founding analytic geometry.</p>
+                            <span class="book-year">1637</span>
                         </div>
-                        
+
+                        <div class="book-card" data-book-info="spivak calculus rigorous mathematics">
+                            <div class="book-cover">
+                                <i data-lucide="trending-up"></i>
+                            </div>
+                            <h4 class="book-title">Calculus</h4>
+                            <p class="book-author">Michael Spivak</p>
+                            <p class="book-description">Rigorous introduction to single-variable calculus, bridging computational techniques with theoretical understanding.</p>
+                            <span class="book-year">1967</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="abbott understanding analysis real mathematics">
+                            <div class="book-cover">
+                                <i data-lucide="bar-chart-3"></i>
+                            </div>
+                            <h4 class="book-title">Understanding Analysis</h4>
+                            <p class="book-author">Stephen Abbott</p>
+                            <p class="book-description">Clear exposition of real analysis foundations, making rigorous mathematics accessible to advanced students.</p>
+                            <span class="book-year">2001</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="axler linear algebra vector spaces">
+                            <div class="book-cover">
+                                <i data-lucide="git-branch"></i>
+                            </div>
+                            <h4 class="book-title">Linear Algebra Done Right</h4>
+                            <p class="book-author">Sheldon Axler</p>
+                            <p class="book-description">Modern approach to linear algebra emphasizing vector spaces and linear maps rather than matrix computation.</p>
+                            <span class="book-year">1995</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="ross probability theory statistics mathematics">
+                            <div class="book-cover">
+                                <i data-lucide="dice-1"></i>
+                            </div>
+                            <h4 class="book-title">A First Course in Probability</h4>
+                            <p class="book-author">Sheldon Ross</p>
+                            <p class="book-description">Comprehensive introduction to probability theory with applications to statistics and engineering.</p>
+                            <span class="book-year">1976</span>
+                        </div>
+
                         <div class="book-card" data-book-info="rudin analysis mathematics real complex">
                             <div class="book-cover">
                                 <i data-lucide="function-square"></i>
                             </div>
                             <h4 class="book-title">Principles of Mathematical Analysis</h4>
                             <p class="book-author">Walter Rudin</p>
-                            <p class="book-description">Classic textbook on real analysis, known for its rigorous approach and clear exposition of fundamental concepts.</p>
+                            <p class="book-description">Classic rigorous treatment of real analysis, essential for advanced mathematical understanding.</p>
                             <span class="book-year">1953</span>
                         </div>
-                        
-                        <div class="book-card" data-book-info="artin algebra mathematics groups rings fields">
+
+                        <div class="book-card" data-book-info="kolmogorov probability foundations mathematics">
                             <div class="book-cover">
-                                <i data-lucide="git-branch"></i>
-                            </div>
-                            <h4 class="book-title">Algebra</h4>
-                            <p class="book-author">Michael Artin</p>
-                            <p class="book-description">Comprehensive introduction to abstract algebra, covering groups, rings, and fields with modern pedagogical approach.</p>
-                            <span class="book-year">1991</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="kolmogorov probability theory foundations statistics">
-                            <div class="book-cover">
-                                <i data-lucide="bar-chart"></i>
+                                <i data-lucide="target"></i>
                             </div>
                             <h4 class="book-title">Foundations of the Theory of Probability</h4>
                             <p class="book-author">Andrey Kolmogorov</p>
-                            <p class="book-description">Axiomatized probability theory, establishing the mathematical foundation for modern probability and statistics.</p>
+                            <p class="book-description">Axiomatic foundation of probability theory, establishing mathematical rigor in statistical reasoning.</p>
                             <span class="book-year">1933</span>
                         </div>
-                        
-                        <div class="book-card" data-book-info="feller probability theory applications statistics">
+
+                        <div class="book-card" data-book-info="rotman algebra abstract mathematics">
                             <div class="book-cover">
-                                <i data-lucide="trending-up"></i>
+                                <i data-lucide="layers"></i>
                             </div>
-                            <h4 class="book-title">An Introduction to Probability Theory and Its Applications</h4>
-                            <p class="book-author">William Feller</p>
-                            <p class="book-description">Classic work on probability theory with numerous applications and examples from various fields.</p>
-                            <span class="book-year">1950</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="fisher statistical methods mathematics statistics">
-                            <div class="book-cover">
-                                <i data-lucide="line-chart"></i>
-                            </div>
-                            <h4 class="book-title">Statistical Methods for Research Workers</h4>
-                            <p class="book-author">Ronald Fisher</p>
-                            <p class="book-description">Foundational text in statistical methodology, introducing many concepts still used in modern statistics.</p>
-                            <span class="book-year">1925</span>
+                            <h4 class="book-title">Advanced Modern Algebra</h4>
+                            <p class="book-author">Joseph Rotman</p>
+                            <p class="book-description">Comprehensive treatment of abstract algebra including groups, rings, fields, and category theory.</p>
+                            <span class="book-year">2002</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Philosophy & Logic -->
+                <!-- Natural Sciences -->
+                <div class="area fade-in" data-area="natural-sciences">
+                    <div class="area-header">
+                        <div class="area-icon">
+                            <i data-lucide="microscope"></i>
+                        </div>
+                        <h3 class="area-title">Natural Sciences</h3>
+                        <span class="area-count">85 books</span>
+                    </div>
+                    <div class="books-grid">
+                        <!-- Physics -->
+                        <div class="book-card" data-book-info="newton principia physics mechanics gravitation">
+                            <div class="book-cover">
+                                <i data-lucide="orbit"></i>
+                            </div>
+                            <h4 class="book-title">Principia Mathematica</h4>
+                            <p class="book-author">Isaac Newton</p>
+                            <p class="book-description">Foundation of classical mechanics and universal gravitation, unifying terrestrial and celestial physics.</p>
+                            <span class="book-year">1687</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="feynman lectures physics modern quantum">
+                            <div class="book-cover">
+                                <i data-lucide="atom"></i>
+                            </div>
+                            <h4 class="book-title">The Feynman Lectures on Physics</h4>
+                            <p class="book-author">Richard Feynman</p>
+                            <p class="book-description">Masterful exposition of modern physics from mechanics to quantum theory, renowned for clarity and insight.</p>
+                            <span class="book-year">1964</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="maxwell electricity magnetism field theory">
+                            <div class="book-cover">
+                                <i data-lucide="zap"></i>
+                            </div>
+                            <h4 class="book-title">Treatise on Electricity and Magnetism</h4>
+                            <p class="book-author">James Clerk Maxwell</p>
+                            <p class="book-description">Unified theory of electromagnetic fields, predicting electromagnetic waves and laying groundwork for modern physics.</p>
+                            <span class="book-year">1873</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="einstein relativity spacetime physics">
+                            <div class="book-cover">
+                                <i data-lucide="clock"></i>
+                            </div>
+                            <h4 class="book-title">Relativity: The Special and General Theory</h4>
+                            <p class="book-author">Albert Einstein</p>
+                            <p class="book-description">Revolutionary theory of space, time, and gravity that transformed our understanding of the universe.</p>
+                            <span class="book-year">1916</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="heisenberg quantum physics philosophy">
+                            <div class="book-cover">
+                                <i data-lucide="wave"></i>
+                            </div>
+                            <h4 class="book-title">Physics and Philosophy</h4>
+                            <p class="book-author">Werner Heisenberg</p>
+                            <p class="book-description">Philosophical implications of quantum mechanics, exploring the relationship between observation and reality.</p>
+                            <span class="book-year">1958</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="von neumann quantum mechanics mathematics">
+                            <div class="book-cover">
+                                <i data-lucide="layers-3"></i>
+                            </div>
+                            <h4 class="book-title">Mathematical Foundations of Quantum Mechanics</h4>
+                            <p class="book-author">John von Neumann</p>
+                            <p class="book-description">Rigorous mathematical framework for quantum theory, establishing the mathematical foundations of modern physics.</p>
+                            <span class="book-year">1932</span>
+                        </div>
+
+                        <!-- Chemistry -->
+                        <div class="book-card" data-book-info="mendeleev principles chemistry periodic table">
+                            <div class="book-cover">
+                                <i data-lucide="grid-2x2"></i>
+                            </div>
+                            <h4 class="book-title">Principles of Chemistry</h4>
+                            <p class="book-author">Dmitri Mendeleev</p>
+                            <p class="book-description">Systematic organization of chemical elements, leading to the periodic table and predicting unknown elements.</p>
+                            <span class="book-year">1869</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="atkins physical chemistry molecular approach">
+                            <div class="book-cover">
+                                <i data-lucide="molecule"></i>
+                            </div>
+                            <h4 class="book-title">Physical Chemistry: A Molecular Approach</h4>
+                            <p class="book-author">Peter Atkins</p>
+                            <p class="book-description">Modern molecular understanding of chemical phenomena, bridging physics and chemistry.</p>
+                            <span class="book-year">1978</span>
+                        </div>
+
+                        <!-- Biology -->
+                        <div class="book-card" data-book-info="darwin origin species evolution natural selection">
+                            <div class="book-cover">
+                                <i data-lucide="tree-deciduous"></i>
+                            </div>
+                            <h4 class="book-title">On the Origin of Species</h4>
+                            <p class="book-author">Charles Darwin</p>
+                            <p class="book-description">Revolutionary theory of evolution by natural selection, fundamentally changing our understanding of life.</p>
+                            <span class="book-year">1859</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="campbell biology comprehensive modern textbook">
+                            <div class="book-cover">
+                                <i data-lucide="dna"></i>
+                            </div>
+                            <h4 class="book-title">Campbell Biology</h4>
+                            <p class="book-author">Neil Campbell & Jane Reece</p>
+                            <p class="book-description">Comprehensive modern biology covering molecular, cellular, and organismal levels of life.</p>
+                            <span class="book-year">1999</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="alberts molecular biology cell">
+                            <div class="book-cover">
+                                <i data-lucide="circle"></i>
+                            </div>
+                            <h4 class="book-title">Molecular Biology of the Cell</h4>
+                            <p class="book-author">Bruce Alberts</p>
+                            <p class="book-description">Definitive work on cellular foundations of life, from molecules to complex cellular processes.</p>
+                            <span class="book-year">1983</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="kandel neural science brain neuroscience">
+                            <div class="book-cover">
+                                <i data-lucide="brain"></i>
+                            </div>
+                            <h4 class="book-title">Principles of Neural Science</h4>
+                            <p class="book-author">Eric Kandel</p>
+                            <p class="book-description">Comprehensive exploration of how the brain works, from molecular mechanisms to behavior.</p>
+                            <span class="book-year">1981</span>
+                        </div>
+
+                        <!-- Earth Sciences -->
+                        <div class="book-card" data-book-info="press siever understanding earth geology">
+                            <div class="book-cover">
+                                <i data-lucide="mountain"></i>
+                            </div>
+                            <h4 class="book-title">Understanding Earth</h4>
+                            <p class="book-author">Frank Press & Raymond Siever</p>
+                            <p class="book-description">Comprehensive geology covering Earth's structure, processes, and history from formation to present.</p>
+                            <span class="book-year">1982</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="prothero evolution fossils paleontology">
+                            <div class="book-cover">
+                                <i data-lucide="bone"></i>
+                            </div>
+                            <h4 class="book-title">Evolution: What the Fossils Say</h4>
+                            <p class="book-author">Donald Prothero</p>
+                            <p class="book-description">Evidence for evolution from the fossil record, connecting paleontology with evolutionary biology.</p>
+                            <span class="book-year">2007</span>
+                        </div>
+
+                        <!-- Medicine -->
+                        <div class="book-card" data-book-info="marieb anatomy physiology human body">
+                            <div class="book-cover">
+                                <i data-lucide="heart"></i>
+                            </div>
+                            <h4 class="book-title">Human Anatomy & Physiology</h4>
+                            <p class="book-author">Elaine Marieb & Katja Hoehn</p>
+                            <p class="book-description">Comprehensive understanding of how the human body works, from cellular to system levels.</p>
+                            <span class="book-year">1989</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="robbins pathology disease medicine">
+                            <div class="book-cover">
+                                <i data-lucide="shield-alert"></i>
+                            </div>
+                            <h4 class="book-title">Robbins Basic Pathology</h4>
+                            <p class="book-author">Kumar, Abbas & Aster</p>
+                            <p class="book-description">Fundamental understanding of diseases and their mechanisms, essential for medical knowledge.</p>
+                            <span class="book-year">1957</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="harrison internal medicine clinical">
+                            <div class="book-cover">
+                                <i data-lucide="stethoscope"></i>
+                            </div>
+                            <h4 class="book-title">Harrison's Principles of Internal Medicine</h4>
+                            <p class="book-author">Dennis Kasper et al.</p>
+                            <p class="book-description">Comprehensive clinical medicine covering diagnosis and treatment of internal diseases.</p>
+                            <span class="book-year">1950</span>
+                        </div>
+
+                        <!-- Scientific Method -->
+                        <div class="book-card" data-book-info="galileo dialogue world systems scientific method">
+                            <div class="book-cover">
+                                <i data-lucide="telescope"></i>
+                            </div>
+                            <h4 class="book-title">Dialogue Concerning Two Chief World Systems</h4>
+                            <p class="book-author">Galileo Galilei</p>
+                            <p class="book-description">Defense of heliocentric theory and foundation of experimental scientific method.</p>
+                            <span class="book-year">1632</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="bacon novum organum inductive method">
+                            <div class="book-cover">
+                                <i data-lucide="search"></i>
+                            </div>
+                            <h4 class="book-title">Novum Organum</h4>
+                            <p class="book-author">Francis Bacon</p>
+                            <p class="book-description">Foundation of inductive method and systematic approach to scientific inquiry.</p>
+                            <span class="book-year">1620</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="popper logic scientific discovery philosophy science">
+                            <div class="book-cover">
+                                <i data-lucide="lightbulb"></i>
+                            </div>
+                            <h4 class="book-title">The Logic of Scientific Discovery</h4>
+                            <p class="book-author">Karl Popper</p>
+                            <p class="book-description">Philosophy of science emphasizing falsifiability as the criterion for scientific theories.</p>
+                            <span class="book-year">1934</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="kuhn structure scientific revolutions paradigms">
+                            <div class="book-cover">
+                                <i data-lucide="refresh-cw"></i>
+                            </div>
+                            <h4 class="book-title">The Structure of Scientific Revolutions</h4>
+                            <p class="book-author">Thomas Kuhn</p>
+                            <p class="book-description">How scientific knowledge progresses through paradigm shifts rather than linear accumulation.</p>
+                            <span class="book-year">1962</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Philosophy & Human Thought -->
                 <div class="area fade-in" data-area="philosophy">
                     <div class="area-header">
                         <div class="area-icon">
                             <i data-lucide="brain"></i>
                         </div>
-                        <h3 class="area-title">Philosophy & Logic</h3>
-                        <span class="area-count">12 books</span>
+                        <h3 class="area-title">Philosophy & Human Thought</h3>
+                        <span class="area-count">95 books</span>
                     </div>
                     <div class="books-grid">
-                        <div class="book-card" data-book-info="aristotle organon logic philosophy ancient">
-                            <div class="book-cover">
-                                <i data-lucide="zap"></i>
-                            </div>
-                            <h4 class="book-title">Organon</h4>
-                            <p class="book-author">Aristotle</p>
-                            <p class="book-description">The earliest formal study of logic we have, forming a highly developed logical theory respected for centuries.</p>
-                            <span class="book-year">4th century BC</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="plato republic philosophy political ancient">
-                            <div class="book-cover">
-                                <i data-lucide="crown"></i>
-                            </div>
-                            <h4 class="book-title">The Republic</h4>
-                            <p class="book-author">Plato</p>
-                            <p class="book-description">Fundamental work in political philosophy and ethics, exploring justice, the ideal state, and the nature of reality.</p>
-                            <span class="book-year">c. 380 BC</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="kant critique pure reason philosophy epistemology">
-                            <div class="book-cover">
-                                <i data-lucide="eye"></i>
-                            </div>
-                            <h4 class="book-title">Critique of Pure Reason</h4>
-                            <p class="book-author">Immanuel Kant</p>
-                            <p class="book-description">One of the most influential works in philosophy, examining the limits and scope of human knowledge.</p>
-                            <span class="book-year">1781</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="hegel phenomenology spirit philosophy german idealism">
-                            <div class="book-cover">
-                                <i data-lucide="infinity"></i>
-                            </div>
-                            <h4 class="book-title">Phenomenology of Spirit</h4>
-                            <p class="book-author">Georg Wilhelm Friedrich Hegel</p>
-                            <p class="book-description">Complex work tracing the development of consciousness and self-consciousness through various stages.</p>
-                            <span class="book-year">1807</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="whitehead russell principia mathematica logic">
-                            <div class="book-cover">
-                                <i data-lucide="binary"></i>
-                            </div>
-                            <h4 class="book-title">Principia Mathematica</h4>
-                            <p class="book-author">Whitehead & Russell</p>
-                            <p class="book-description">Monumental work attempting to derive all mathematical truths from a well-defined set of axioms and inference rules.</p>
-                            <span class="book-year">1910-13</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="augustine confessions philosophy theology christianity">
-                            <div class="book-cover">
-                                <i data-lucide="heart"></i>
-                            </div>
-                            <h4 class="book-title">Confessions</h4>
-                            <p class="book-author">Augustine of Hippo</p>
-                            <p class="book-description">Autobiographical work examining the journey from sin to redemption and the nature of time and memory.</p>
-                            <span class="book-year">397-400</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="aquinas summa theologica philosophy theology medieval">
-                            <div class="book-cover">
-                                <i data-lucide="cross"></i>
-                            </div>
-                            <h4 class="book-title">Summa Theologica</h4>
-                            <p class="book-author">Thomas Aquinas</p>
-                            <p class="book-description">Comprehensive synthesis of Christian theology and Aristotelian philosophy, addressing fundamental questions about God, ethics, and human nature.</p>
-                            <span class="book-year">1265-1273</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="descartes meditations philosophy rationalism doubt">
-                            <div class="book-cover">
-                                <i data-lucide="help-circle"></i>
-                            </div>
-                            <h4 class="book-title">Meditations on First Philosophy</h4>
-                            <p class="book-author">René Descartes</p>
-                            <p class="book-description">Foundational work of modern philosophy, employing methodical doubt to establish certain knowledge and the famous "cogito ergo sum".</p>
-                            <span class="book-year">1641</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="nietzsche zarathustra philosophy existentialism nihilism">
-                            <div class="book-cover">
-                                <i data-lucide="mountain"></i>
-                            </div>
-                            <h4 class="book-title">Thus Spoke Zarathustra</h4>
-                            <p class="book-author">Friedrich Nietzsche</p>
-                            <p class="book-description">Philosophical novel exploring themes of the death of God, the Übermensch, and the eternal recurrence.</p>
-                            <span class="book-year">1883-1885</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="wittgenstein tractus philosophy language logic">
-                            <div class="book-cover">
-                                <i data-lucide="message-square"></i>
-                            </div>
-                            <h4 class="book-title">Tractus Logico-Philosophicus</h4>
-                            <p class="book-author">Ludwig Wittgenstein</p>
-                            <p class="book-description">Influential work on logic and language, proposing that philosophical problems arise from misunderstandings of language.</p>
-                            <span class="book-year">1921</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="sartre being nothingness philosophy existentialism phenomenology">
-                            <div class="book-cover">
-                                <i data-lucide="void"></i>
-                            </div>
-                            <h4 class="book-title">Being and Nothingness</h4>
-                            <p class="book-author">Jean-Paul Sartre</p>
-                            <p class="book-description">Major work of existentialist philosophy exploring human consciousness, freedom, and responsibility.</p>
-                            <span class="book-year">1943</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="rawls justice philosophy political theory fairness">
+                        <!-- Classical Philosophy -->
+                        <div class="book-card" data-book-info="plato republic justice political philosophy">
                             <div class="book-cover">
                                 <i data-lucide="scales"></i>
                             </div>
-                            <h4 class="book-title">A Theory of Justice</h4>
-                            <p class="book-author">John Rawls</p>
-                            <p class="book-description">Influential work in political philosophy proposing principles of justice through the "veil of ignorance" thought experiment.</p>
-                            <span class="book-year">1971</span>
+                            <h4 class="book-title">Republic</h4>
+                            <p class="book-author">Plato</p>
+                            <p class="book-description">Foundational work on justice, the ideal state, and the nature of reality through the allegory of the cave.</p>
+                            <span class="book-year">c. 380 BC</span>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Physics -->
-                <div class="area fade-in" data-area="physics">
-                    <div class="area-header">
-                        <div class="area-icon">
-                            <i data-lucide="atom"></i>
-                        </div>
-                        <h3 class="area-title">Physics</h3>
-                        <span class="area-count">10 books</span>
-                    </div>
-                    <div class="books-grid">
-                        <div class="book-card" data-book-info="einstein relativity physics modern spacetime">
+                        <div class="book-card" data-book-info="aristotle politics classical political theory">
                             <div class="book-cover">
-                                <i data-lucide="zap"></i>
+                                <i data-lucide="landmark"></i>
                             </div>
-                            <h4 class="book-title">Relativity: The Special and General Theory</h4>
-                            <p class="book-author">Albert Einstein</p>
-                            <p class="book-description">Accessible explanation of the theory of relativity that revolutionized our understanding of space, time, and gravity.</p>
-                            <span class="book-year">1916</span>
+                            <h4 class="book-title">Politics</h4>
+                            <p class="book-author">Aristotle</p>
+                            <p class="book-description">Classical political theory examining the nature of the state, citizenship, and different forms of government.</p>
+                            <span class="book-year">c. 335 BC</span>
                         </div>
-                        
-                        <div class="book-card" data-book-info="feynman lectures physics quantum mechanics">
-                            <div class="book-cover">
-                                <i data-lucide="radio"></i>
-                            </div>
-                            <h4 class="book-title">The Feynman Lectures on Physics</h4>
-                            <p class="book-author">Richard Feynman</p>
-                            <p class="book-description">Comprehensive and accessible introduction to physics, covering mechanics, thermodynamics, and quantum mechanics.</p>
-                            <span class="book-year">1964</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="maxwell treatise electricity magnetism electromagnetic">
-                            <div class="book-cover">
-                                <i data-lucide="bolt"></i>
-                            </div>
-                            <h4 class="book-title">A Treatise on Electricity and Magnetism</h4>
-                            <p class="book-author">James Clerk Maxwell</p>
-                            <p class="book-description">Foundational work unifying electricity and magnetism, introducing Maxwell's equations that describe electromagnetic fields.</p>
-                            <span class="book-year">1873</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="planck quantum theory physics thermal radiation">
-                            <div class="book-cover">
-                                <i data-lucide="waves"></i>
-                            </div>
-                            <h4 class="book-title">The Theory of Heat Radiation</h4>
-                            <p class="book-author">Max Planck</p>
-                            <p class="book-description">Introduced quantum theory to explain blackbody radiation, marking the birth of quantum physics.</p>
-                            <span class="book-year">1906</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="heisenberg uncertainty quantum mechanics physics">
-                            <div class="book-cover">
-                                <i data-lucide="blur"></i>
-                            </div>
-                            <h4 class="book-title">The Physical Principles of the Quantum Theory</h4>
-                            <p class="book-author">Werner Heisenberg</p>
-                            <p class="book-description">Foundational text on quantum mechanics, introducing the uncertainty principle and matrix mechanics.</p>
-                            <span class="book-year">1930</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="schrodinger wave mechanics quantum physics">
-                            <div class="book-cover">
-                                <i data-lucide="sine-wave"></i>
-                            </div>
-                            <h4 class="book-title">Collected Papers on Wave Mechanics</h4>
-                            <p class="book-author">Erwin Schrödinger</p>
-                            <p class="book-description">Development of wave mechanics and the Schrödinger equation, fundamental to quantum mechanics.</p>
-                            <span class="book-year">1928</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="bohr atomic theory quantum physics complementarity">
-                            <div class="book-cover">
-                                <i data-lucide="target"></i>
-                            </div>
-                            <h4 class="book-title">Atomic Theory and the Description of Nature</h4>
-                            <p class="book-author">Niels Bohr</p>
-                            <p class="book-description">Essays on atomic physics and quantum theory, introducing the principle of complementarity.</p>
-                            <span class="book-year">1934</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="hawking brief history time cosmology physics">
-                            <div class="book-cover">
-                                <i data-lucide="clock"></i>
-                            </div>
-                            <h4 class="book-title">A Brief History of Time</h4>
-                            <p class="book-author">Stephen Hawking</p>
-                            <p class="book-description">Popular science book explaining cosmology, black holes, and the nature of time in accessible terms.</p>
-                            <span class="book-year">1988</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="weinberg first minutes cosmology big bang">
-                            <div class="book-cover">
-                                <i data-lucide="sunrise"></i>
-                            </div>
-                            <h4 class="book-title">The First Three Minutes</h4>
-                            <p class="book-author">Steven Weinberg</p>
-                            <p class="book-description">Account of the universe's first moments after the Big Bang, explaining early cosmology and particle physics.</p>
-                            <span class="book-year">1977</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="landau lifshitz theoretical physics mechanics">
-                            <div class="book-cover">
-                                <i data-lucide="cog"></i>
-                            </div>
-                            <h4 class="book-title">Course of Theoretical Physics</h4>
-                            <p class="book-author">Landau & Lifshitz</p>
-                            <p class="book-description">Comprehensive series covering all major areas of theoretical physics with mathematical rigor.</p>
-                            <span class="book-year">1938-1981</span>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Biology & Medicine -->
-                <div class="area fade-in" data-area="biology">
-                    <div class="area-header">
-                        <div class="area-icon">
-                            <i data-lucide="dna"></i>
-                        </div>
-                        <h3 class="area-title">Biology & Medicine</h3>
-                        <span class="area-count">9 books</span>
-                    </div>
-                    <div class="books-grid">
-                        <div class="book-card" data-book-info="darwin origin species evolution biology natural selection">
+                        <div class="book-card" data-book-info="confucius analects eastern wisdom ethics">
                             <div class="book-cover">
-                                <i data-lucide="leaf"></i>
+                                <i data-lucide="yin-yang"></i>
                             </div>
-                            <h4 class="book-title">On the Origin of Species</h4>
-                            <p class="book-author">Charles Darwin</p>
-                            <p class="book-description">Revolutionary work introducing the theory of evolution through natural selection, fundamentally changing biology.</p>
+                            <h4 class="book-title">The Analects</h4>
+                            <p class="book-author">Confucius</p>
+                            <p class="book-description">Eastern wisdom on ethics, morality, and proper conduct in society and governance.</p>
+                            <span class="book-year">c. 475-221 BC</span>
+                        </div>
+
+                        
+                        <!-- Modern Philosophy -->
+                        <div class="book-card" data-book-info="descartes meditations first philosophy method">
+                            <div class="book-cover">
+                                <i data-lucide="eye"></i>
+                            </div>
+                            <h4 class="book-title">Meditations on First Philosophy</h4>
+                            <p class="book-author">René Descartes</p>
+                            <p class="book-description">Foundation of modern philosophy through methodical doubt and the establishment of certain knowledge.</p>
+                            <span class="book-year">1641</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="hume enquiry human understanding empiricism">
+                            <div class="book-cover">
+                                <i data-lucide="question-mark"></i>
+                            </div>
+                            <h4 class="book-title">An Enquiry Concerning Human Understanding</h4>
+                            <p class="book-author">David Hume</p>
+                            <p class="book-description">Empiricist critique of knowledge and causation, challenging the foundations of scientific reasoning.</p>
+                            <span class="book-year">1748</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="kant critique pure reason transcendental">
+                            <div class="book-cover">
+                                <i data-lucide="compass"></i>
+                            </div>
+                            <h4 class="book-title">Critique of Pure Reason</h4>
+                            <p class="book-author">Immanuel Kant</p>
+                            <p class="book-description">Revolutionary synthesis of rationalism and empiricism, establishing the limits and scope of human knowledge.</p>
+                            <span class="book-year">1781</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="hegel phenomenology spirit dialectical">
+                            <div class="book-cover">
+                                <i data-lucide="arrow-up-right"></i>
+                            </div>
+                            <h4 class="book-title">Phenomenology of Spirit</h4>
+                            <p class="book-author">G.W.F. Hegel</p>
+                            <p class="book-description">Dialectical development of consciousness and the historical unfolding of absolute knowledge.</p>
+                            <span class="book-year">1807</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="nietzsche beyond good evil morality">
+                            <div class="book-cover">
+                                <i data-lucide="shield-x"></i>
+                            </div>
+                            <h4 class="book-title">Beyond Good and Evil</h4>
+                            <p class="book-author">Friedrich Nietzsche</p>
+                            <p class="book-description">Critique of traditional morality and the call for new philosophical perspectives beyond conventional values.</p>
+                            <span class="book-year">1886</span>
+                        </div>
+
+                        <!-- Ethics & Political Philosophy -->
+                        <div class="book-card" data-book-info="mill on liberty individual freedom">
+                            <div class="book-cover">
+                                <i data-lucide="unlock"></i>
+                            </div>
+                            <h4 class="book-title">On Liberty</h4>
+                            <p class="book-author">John Stuart Mill</p>
+                            <p class="book-description">Classic defense of individual freedom and the harm principle in liberal democratic society.</p>
                             <span class="book-year">1859</span>
                         </div>
-                        
-                        <div class="book-card" data-book-info="mendel genetics heredity biology plants">
-                            <div class="book-cover">
-                                <i data-lucide="flower"></i>
-                            </div>
-                            <h4 class="book-title">Experiments on Plant Hybridization</h4>
-                            <p class="book-author">Gregor Mendel</p>
-                            <p class="book-description">Foundational work in genetics, establishing the basic principles of heredity through pea plant experiments.</p>
-                            <span class="book-year">1866</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="watson crick dna structure molecular biology">
-                            <div class="book-cover">
-                                <i data-lucide="helix"></i>
-                            </div>
-                            <h4 class="book-title">The Double Helix</h4>
-                            <p class="book-author">James Watson</p>
-                            <p class="book-description">Personal account of the discovery of DNA's structure, revealing the competitive world of scientific research.</p>
-                            <span class="book-year">1968</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="vesalius anatomy medicine human body">
-                            <div class="book-cover">
-                                <i data-lucide="user"></i>
-                            </div>
-                            <h4 class="book-title">De Humani Corporis Fabrica</h4>
-                            <p class="book-author">Andreas Vesalius</p>
-                            <p class="book-description">Groundbreaking anatomical work based on human dissection, correcting centuries of anatomical errors.</p>
-                            <span class="book-year">1543</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="harvey circulation blood medicine physiology">
-                            <div class="book-cover">
-                                <i data-lucide="heart-pulse"></i>
-                            </div>
-                            <h4 class="book-title">De Motu Cordis</h4>
-                            <p class="book-author">William Harvey</p>
-                            <p class="book-description">Described the circulation of blood, revolutionizing understanding of cardiovascular physiology.</p>
-                            <span class="book-year">1628</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="gould wonderful life evolution paleontology burgess shale">
-                            <div class="book-cover">
-                                <i data-lucide="shell"></i>
-                            </div>
-                            <h4 class="book-title">Wonderful Life</h4>
-                            <p class="book-author">Stephen Jay Gould</p>
-                            <p class="book-description">Examination of the Burgess Shale fossils and their implications for understanding evolution and diversity.</p>
-                            <span class="book-year">1989</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="dawkins selfish gene evolution biology genetics">
-                            <div class="book-cover">
-                                <i data-lucide="git-branch"></i>
-                            </div>
-                            <h4 class="book-title">The Selfish Gene</h4>
-                            <p class="book-author">Richard Dawkins</p>
-                            <p class="book-description">Gene-centered view of evolution, introducing the concept of memes and evolutionary psychology.</p>
-                            <span class="book-year">1976</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="wilson sociobiology evolution behavior biology">
-                            <div class="book-cover">
-                                <i data-lucide="users"></i>
-                            </div>
-                            <h4 class="book-title">Sociobiology: The New Synthesis</h4>
-                            <p class="book-author">Edward O. Wilson</p>
-                            <p class="book-description">Systematic study of the biological basis of social behavior across species, founding sociobiology.</p>
-                            <span class="book-year">1975</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="cannon homeostasis physiology medicine body regulation">
-                            <div class="book-cover">
-                                <i data-lucide="activity"></i>
-                            </div>
-                            <h4 class="book-title">The Wisdom of the Body</h4>
-                            <p class="book-author">Walter Cannon</p>
-                            <p class="book-description">Introduction of the concept of homeostasis, explaining how the body maintains internal stability.</p>
-                            <span class="book-year">1932</span>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Computer Science -->
-                <div class="area fade-in" data-area="computer-science">
-                    <div class="area-header">
-                        <div class="area-icon">
-                            <i data-lucide="cpu"></i>
-                        </div>
-                        <h3 class="area-title">Computer Science</h3>
-                        <span class="area-count">8 books</span>
-                    </div>
-                    <div class="books-grid">
-                        <div class="book-card" data-book-info="turing computing machinery intelligence artificial intelligence">
+                        <div class="book-card" data-book-info="rawls theory justice fairness">
                             <div class="book-cover">
-                                <i data-lucide="brain-circuit"></i>
+                                <i data-lucide="balance-scale"></i>
                             </div>
-                            <h4 class="book-title">Computing Machinery and Intelligence</h4>
-                            <p class="book-author">Alan Turing</p>
-                            <p class="book-description">Seminal paper introducing the Turing Test and laying foundations for artificial intelligence research.</p>
-                            <span class="book-year">1950</span>
+                            <h4 class="book-title">A Theory of Justice</h4>
+                            <p class="book-author">John Rawls</p>
+                            <p class="book-description">Modern political philosophy establishing justice as fairness and the original position thought experiment.</p>
+                            <span class="book-year">1971</span>
                         </div>
-                        
-                        <div class="book-card" data-book-info="knuth art computer programming algorithms">
-                            <div class="book-cover">
-                                <i data-lucide="code"></i>
-                            </div>
-                            <h4 class="book-title">The Art of Computer Programming</h4>
-                            <p class="book-author">Donald Knuth</p>
-                            <p class="book-description">Comprehensive treatise on algorithms and data structures, considered the definitive work in computer science.</p>
-                            <span class="book-year">1968-</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="von neumann computer architecture design stored program">
-                            <div class="book-cover">
-                                <i data-lucide="memory-stick"></i>
-                            </div>
-                            <h4 class="book-title">First Draft of a Report on the EDVAC</h4>
-                            <p class="book-author">John von Neumann</p>
-                            <p class="book-description">Outlined the stored-program concept, establishing the foundation for modern computer architecture.</p>
-                            <span class="book-year">1945</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="shannon information theory communication mathematics">
-                            <div class="book-cover">
-                                <i data-lucide="signal"></i>
-                            </div>
-                            <h4 class="book-title">A Mathematical Theory of Communication</h4>
-                            <p class="book-author">Claude Shannon</p>
-                            <p class="book-description">Foundational work establishing information theory and the mathematical basis of digital communication.</p>
-                            <span class="book-year">1948</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="dijkstra structured programming computer science algorithms">
-                            <div class="book-cover">
-                                <i data-lucide="layers-3"></i>
-                            </div>
-                            <h4 class="book-title">A Discipline of Programming</h4>
-                            <p class="book-author">Edsger Dijkstra</p>
-                            <p class="book-description">Systematic approach to program construction and verification, promoting structured programming principles.</p>
-                            <span class="book-year">1976</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="cormen algorithms introduction computer science data structures">
-                            <div class="book-cover">
-                                <i data-lucide="git-merge"></i>
-                            </div>
-                            <h4 class="book-title">Introduction to Algorithms</h4>
-                            <p class="book-author">Cormen, Leiserson, Rivest & Stein</p>
-                            <p class="book-description">Comprehensive textbook covering fundamental algorithms and data structures with rigorous analysis.</p>
-                            <span class="book-year">1990</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="ritchie kernighan c programming language">
-                            <div class="book-cover">
-                                <i data-lucide="terminal"></i>
-                            </div>
-                            <h4 class="book-title">The C Programming Language</h4>
-                            <p class="book-author">Kernighan & Ritchie</p>
-                            <p class="book-description">Definitive guide to the C programming language, influential in system programming and software development.</p>
-                            <span class="book-year">1978</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="brooks mythical man month software engineering">
-                            <div class="book-cover">
-                                <i data-lucide="users-cog"></i>
-                            </div>
-                            <h4 class="book-title">The Mythical Man-Month</h4>
-                            <p class="book-author">Frederick Brooks</p>
-                            <p class="book-description">Classic work on software engineering and project management, introducing Brook's Law about project complexity.</p>
-                            <span class="book-year">1975</span>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Literature & Languages -->
-                <div class="area fade-in" data-area="literature">
-                    <div class="area-header">
-                        <div class="area-icon">
-                            <i data-lucide="book-open"></i>
-                        </div>
-                        <h3 class="area-title">Literature & Languages</h3>
-                        <span class="area-count">10 books</span>
-                    </div>
-                    <div class="books-grid">
-                        <div class="book-card" data-book-info="shakespeare hamlet literature tragedy english">
-                            <div class="book-cover">
-                                <i data-lucide="theatre"></i>
-                            </div>
-                            <h4 class="book-title">Hamlet</h4>
-                            <p class="book-author">William Shakespeare</p>
-                            <p class="book-description">Timeless tragedy exploring themes of revenge, madness, and moral corruption in the Danish court.</p>
-                            <span class="book-year">c. 1600</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="homer odyssey epic literature ancient greek">
-                            <div class="book-cover">
-                                <i data-lucide="ship"></i>
-                            </div>
-                            <h4 class="book-title">The Odyssey</h4>
-                            <p class="book-author">Homer</p>
-                            <p class="book-description">Epic poem chronicling Odysseus's journey home after the Trojan War, foundational text of Western literature.</p>
-                            <span class="book-year">8th century BC</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="dante divine comedy literature medieval poetry">
-                            <div class="book-cover">
-                                <i data-lucide="mountain-snow"></i>
-                            </div>
-                            <h4 class="book-title">The Divine Comedy</h4>
-                            <p class="book-author">Dante Alighieri</p>
-                            <p class="book-description">Allegorical journey through Hell, Purgatory, and Paradise, masterpiece of world literature.</p>
-                            <span class="book-year">1308-1320</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="cervantes don quixote literature spanish novel">
-                            <div class="book-cover">
-                                <i data-lucide="shield"></i>
-                            </div>
-                            <h4 class="book-title">Don Quixote</h4>
-                            <p class="book-author">Miguel de Cervantes</p>
-                            <p class="book-description">Often considered the first modern novel, satirizing chivalric romances while exploring reality and idealism.</p>
-                            <span class="book-year">1605-1615</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="joyce ulysses literature modernism stream consciousness">
-                            <div class="book-cover">
-                                <i data-lucide="waves"></i>
-                            </div>
-                            <h4 class="book-title">Ulysses</h4>
-                            <p class="book-author">James Joyce</p>
-                            <p class="book-description">Modernist masterpiece employing stream-of-consciousness technique to chronicle a single day in Dublin.</p>
-                            <span class="book-year">1922</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="proust remembrance time literature french modernism">
-                            <div class="book-cover">
-                                <i data-lucide="clock-3"></i>
-                            </div>
-                            <h4 class="book-title">In Search of Lost Time</h4>
-                            <p class="book-author">Marcel Proust</p>
-                            <p class="book-description">Monumental novel exploring memory, time, and human experience through the narrator's recollections.</p>
-                            <span class="book-year">1913-1927</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="kafka metamorphosis literature existentialism alienation">
-                            <div class="book-cover">
-                                <i data-lucide="bug"></i>
-                            </div>
-                            <h4 class="book-title">The Metamorphosis</h4>
-                            <p class="book-author">Franz Kafka</p>
-                            <p class="book-description">Surreal novella about a man transformed into an insect, exploring themes of alienation and dehumanization.</p>
-                            <span class="book-year">1915</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="dostoevsky crime punishment literature russian psychology">
-                            <div class="book-cover">
-                                <i data-lucide="gavel"></i>
-                            </div>
-                            <h4 class="book-title">Crime and Punishment</h4>
-                            <p class="book-author">Fyodor Dostoevsky</p>
-                            <p class="book-description">Psychological novel exploring guilt, redemption, and the human condition through a murderer's conscience.</p>
-                            <span class="book-year">1866</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="tolstoy war peace literature russian epic">
-                            <div class="book-cover">
-                                <i data-lucide="sword"></i>
-                            </div>
-                            <h4 class="book-title">War and Peace</h4>
-                            <p class="book-author">Leo Tolstoy</p>
-                            <p class="book-description">Epic novel chronicling Russian society during the Napoleonic era, exploring history, love, and human nature.</p>
-                            <span class="book-year">1867</span>
-                        </div>
-                        
-                        <div class="book-card" data-book-info="austen pride prejudice literature english novel romance">
+                        <div class="book-card" data-book-info="singer practical ethics utilitarian">
                             <div class="book-cover">
                                 <i data-lucide="heart-handshake"></i>
                             </div>
-                            <h4 class="book-title">Pride and Prejudice</h4>
-                            <p class="book-author">Jane Austen</p>
-                            <p class="book-description">Social comedy of manners exploring marriage, class, and character development in Regency England.</p>
-                            <span class="book-year">1813</span>
+                            <h4 class="book-title">Practical Ethics</h4>
+                            <p class="book-author">Peter Singer</p>
+                            <p class="book-description">Applied utilitarian ethics addressing contemporary moral issues from animal rights to global poverty.</p>
+                            <span class="book-year">1979</span>
+                        </div>
+
+                        <!-- Eastern Philosophy -->
+                        <div class="book-card" data-book-info="laozi tao te ching taoism">
+                            <div class="book-cover">
+                                <i data-lucide="yin-yang"></i>
+                            </div>
+                            <h4 class="book-title">Tao Te Ching</h4>
+                            <p class="book-author">Laozi</p>
+                            <p class="book-description">Foundational text of Taoism exploring the nature of the Tao and the philosophy of wu wei.</p>
+                            <span class="book-year">c. 6th century BC</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="nagarjuna middle way buddhist philosophy">
+                            <div class="book-cover">
+                                <i data-lucide="lotus"></i>
+                            </div>
+                            <h4 class="book-title">The Fundamental Wisdom of the Middle Way</h4>
+                            <p class="book-author">Nagarjuna</p>
+                            <p class="book-description">Buddhist philosophy of emptiness and dependent origination, central to Mahayana thought.</p>
+                            <span class="book-year">c. 2nd century</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="shankara advaita vedanta hindu philosophy">
+                            <div class="book-cover">
+                                <i data-lucide="sun"></i>
+                            </div>
+                            <h4 class="book-title">Vivekachudamani</h4>
+                            <p class="book-author">Adi Shankara</p>
+                            <p class="book-description">Advaita Vedanta philosophy of non-dualism and the unity of Atman and Brahman.</p>
+                            <span class="book-year">c. 8th century</span>
+                        </div>
+
+                        <!-- Contemporary Philosophy -->
+                        <div class="book-card" data-book-info="kripke naming necessity modal logic">
+                            <div class="book-cover">
+                                <i data-lucide="link"></i>
+                            </div>
+                            <h4 class="book-title">Naming and Necessity</h4>
+                            <p class="book-author">Saul Kripke</p>
+                            <p class="book-description">Revolutionary work in modal logic, necessity, and the nature of names and natural kinds.</p>
+                            <span class="book-year">1980</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="dennett consciousness explained philosophy mind">
+                            <div class="book-cover">
+                                <i data-lucide="brain-circuit"></i>
+                            </div>
+                            <h4 class="book-title">Consciousness Explained</h4>
+                            <p class="book-author">Daniel Dennett</p>
+                            <p class="book-description">Materialist account of consciousness challenging intuitions about the nature of subjective experience.</p>
+                            <span class="book-year">1991</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="chalmers conscious mind hard problem">
+                            <div class="book-cover">
+                                <i data-lucide="zap"></i>
+                            </div>
+                            <h4 class="book-title">The Conscious Mind</h4>
+                            <p class="book-author">David Chalmers</p>
+                            <p class="book-description">Formulation of the hard problem of consciousness and arguments for property dualism.</p>
+                            <span class="book-year">1996</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Economics & Political Science -->
-                <div class="area fade-in" data-area="economics">
+                <!-- Social Sciences & History -->
+                <div class="area fade-in" data-area="social-sciences">
                     <div class="area-header">
                         <div class="area-icon">
-                            <i data-lucide="trending-up"></i>
+                            <i data-lucide="users"></i>
                         </div>
-                        <h3 class="area-title">Economics & Political Science</h3>
-                        <span class="area-count">8 books</span>
+                        <h3 class="area-title">Social Sciences & History</h3>
+                        <span class="area-count">78 books</span>
                     </div>
                     <div class="books-grid">
-                        <div class="book-card" data-book-info="smith wealth nations economics capitalism market">
+                        <!-- History -->
+                        <div class="book-card" data-book-info="herodotus histories ancient history">
+                            <div class="book-cover">
+                                <i data-lucide="scroll"></i>
+                            </div>
+                            <h4 class="book-title">The Histories</h4>
+                            <p class="book-author">Herodotus</p>
+                            <p class="book-description">First work of history in Western literature, chronicling the Greco-Persian Wars and diverse cultures.</p>
+                            <span class="book-year">c. 440 BC</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="thucydides peloponnesian war history">
+                            <div class="book-cover">
+                                <i data-lucide="sword"></i>
+                            </div>
+                            <h4 class="book-title">History of the Peloponnesian War</h4>
+                            <p class="book-author">Thucydides</p>
+                            <p class="book-description">Scientific approach to history analyzing the causes and conduct of the great war between Athens and Sparta.</p>
+                            <span class="book-year">c. 431 BC</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="gibbon decline fall roman empire">
+                            <div class="book-cover">
+                                <i data-lucide="columns"></i>
+                            </div>
+                            <h4 class="book-title">The Decline and Fall of the Roman Empire</h4>
+                            <p class="book-author">Edward Gibbon</p>
+                            <p class="book-description">Monumental work tracing the fall of Rome and the rise of medieval Europe with Enlightenment perspective.</p>
+                            <span class="book-year">1776-1789</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="diamond guns germs steel civilization">
+                            <div class="book-cover">
+                                <i data-lucide="globe"></i>
+                            </div>
+                            <h4 class="book-title">Guns, Germs, and Steel</h4>
+                            <p class="book-author">Jared Diamond</p>
+                            <p class="book-description">Geographic and environmental factors shaping the fates of human societies across continents.</p>
+                            <span class="book-year">1997</span>
+                        </div>
+
+                        <!-- Psychology -->
+                        <div class="book-card" data-book-info="james principles psychology consciousness">
+                            <div class="book-cover">
+                                <i data-lucide="brain"></i>
+                            </div>
+                            <h4 class="book-title">The Principles of Psychology</h4>
+                            <p class="book-author">William James</p>
+                            <p class="book-description">Foundational work establishing psychology as a scientific discipline, exploring consciousness and behavior.</p>
+                            <span class="book-year">1890</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="freud interpretation dreams unconscious">
+                            <div class="book-cover">
+                                <i data-lucide="moon"></i>
+                            </div>
+                            <h4 class="book-title">The Interpretation of Dreams</h4>
+                            <p class="book-author">Sigmund Freud</p>
+                            <p class="book-description">Groundbreaking exploration of the unconscious mind and the psychological significance of dreams.</p>
+                            <span class="book-year">1900</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="kahneman thinking fast slow cognitive">
+                            <div class="book-cover">
+                                <i data-lucide="zap"></i>
+                            </div>
+                            <h4 class="book-title">Thinking, Fast and Slow</h4>
+                            <p class="book-author">Daniel Kahneman</p>
+                            <p class="book-description">Behavioral economics and cognitive biases in human decision-making and judgment.</p>
+                            <span class="book-year">2011</span>
+                        </div>
+
+                        <!-- Sociology -->
+                        <div class="book-card" data-book-info="durkheim rules sociological method">
+                            <div class="book-cover">
+                                <i data-lucide="users-2"></i>
+                            </div>
+                            <h4 class="book-title">The Rules of Sociological Method</h4>
+                            <p class="book-author">Émile Durkheim</p>
+                            <p class="book-description">Establishing sociology as a scientific discipline with methods for studying social facts and phenomena.</p>
+                            <span class="book-year">1895</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="weber protestant ethic capitalism">
+                            <div class="book-cover">
+                                <i data-lucide="church"></i>
+                            </div>
+                            <h4 class="book-title">The Protestant Ethic and the Spirit of Capitalism</h4>
+                            <p class="book-author">Max Weber</p>
+                            <p class="book-description">Analysis of how Protestant work ethic contributed to the rise of modern capitalism.</p>
+                            <span class="book-year">1905</span>
+                        </div>
+
+                        <!-- Economics -->
+                        <div class="book-card" data-book-info="smith wealth nations economics">
                             <div class="book-cover">
                                 <i data-lucide="coins"></i>
                             </div>
                             <h4 class="book-title">The Wealth of Nations</h4>
                             <p class="book-author">Adam Smith</p>
-                            <p class="book-description">Foundational work of modern economics, introducing concepts of the invisible hand and free market principles.</p>
+                            <p class="book-description">Foundation of modern economics, analyzing the nature and causes of national prosperity.</p>
                             <span class="book-year">1776</span>
                         </div>
-                        
-                        <div class="book-card" data-book-info="marx capital economics communism political economy">
+
+                        <div class="book-card" data-book-info="marx das kapital political economy">
                             <div class="book-cover">
-                                <i data-lucide="factory"></i>
+                                <i data-lucide="hammer"></i>
                             </div>
                             <h4 class="book-title">Das Kapital</h4>
                             <p class="book-author">Karl Marx</p>
-                            <p class="book-description">Critique of political economy and capitalism, analyzing class struggle and economic exploitation.</p>
-                            <span class="book-year">1867-1894</span>
+                            <p class="book-description">Critique of political economy and analysis of capitalist production and class struggle.</p>
+                            <span class="book-year">1867</span>
                         </div>
-                        
-                        <div class="book-card" data-book-info="keynes general theory economics macroeconomics employment">
+
+                        <div class="book-card" data-book-info="keynes general theory employment">
                             <div class="book-cover">
-                                <i data-lucide="bar-chart-3"></i>
+                                <i data-lucide="trending-up"></i>
                             </div>
                             <h4 class="book-title">The General Theory of Employment, Interest and Money</h4>
                             <p class="book-author">John Maynard Keynes</p>
-                            <p class="book-description">Revolutionary work in macroeconomics that challenged classical economic theory and laid foundation for modern fiscal policy.</p>
+                            <p class="book-description">Revolutionary macroeconomic theory explaining unemployment and advocating government intervention.</p>
                             <span class="book-year">1936</span>
                         </div>
-                        
-                        <!-- Template for adding new books - Copy and modify -->
-                        <div class="book-card" data-book-info="author title topic keywords">
+
+                        <!-- Anthropology -->
+                        <div class="book-card" data-book-info="levi-strauss structural anthropology">
                             <div class="book-cover">
-                                <i data-lucide="book"></i> <!-- Change icon -->
+                                <i data-lucide="network"></i>
                             </div>
-                            <h4 class="book-title">Book Title</h4>
-                            <p class="book-author">Author Name</p>
-                            <p class="book-description">Brief description of the book and its significance.</p>
-                            <span class="book-year">Year</span>
+                            <h4 class="book-title">Structural Anthropology</h4>
+                            <p class="book-author">Claude Lévi-Strauss</p>
+                            <p class="book-description">Structuralist analysis of human culture, kinship systems, and universal patterns in human thought.</p>
+                            <span class="book-year">1958</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="mead coming age samoa cultural">
+                            <div class="book-cover">
+                                <i data-lucide="palm-tree"></i>
+                            </div>
+                            <h4 class="book-title">Coming of Age in Samoa</h4>
+                            <p class="book-author">Margaret Mead</p>
+                            <p class="book-description">Pioneering ethnographic study challenging Western assumptions about adolescence and cultural development.</p>
+                            <span class="book-year">1928</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Template for New Knowledge Area -->
-                <div class="area fade-in" data-area="area-name">
+                <!-- Literature & Arts -->
+                <div class="area fade-in" data-area="literature-arts">
                     <div class="area-header">
                         <div class="area-icon">
-                            <i data-lucide="book-open"></i> <!-- Change icon -->
+                            <i data-lucide="feather"></i>
                         </div>
-                        <h3 class="area-title">Area Name</h3>
-                        <span class="area-count">X books</span>
+                        <h3 class="area-title">Literature & Arts</h3>
+                        <span class="area-count">52 books</span>
                     </div>
                     <div class="books-grid">
-                        <!-- Copy book-card template here -->
+                        <!-- Epic Literature -->
+                        <div class="book-card" data-book-info="homer iliad epic poetry">
+                            <div class="book-cover">
+                                <i data-lucide="shield"></i>
+                            </div>
+                            <h4 class="book-title">The Iliad</h4>
+                            <p class="book-author">Homer</p>
+                            <p class="book-description">Foundational epic of Western literature chronicling the Trojan War and the rage of Achilles.</p>
+                            <span class="book-year">c. 8th century BC</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="dante divine comedy medieval">
+                            <div class="book-cover">
+                                <i data-lucide="mountain"></i>
+                            </div>
+                            <h4 class="book-title">The Divine Comedy</h4>
+                            <p class="book-author">Dante Alighieri</p>
+                            <p class="book-description">Epic journey through Hell, Purgatory, and Paradise, masterpiece of medieval Christian literature.</p>
+                            <span class="book-year">1320</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="shakespeare hamlet tragedy">
+                            <div class="book-cover">
+                                <i data-lucide="skull"></i>
+                            </div>
+                            <h4 class="book-title">Hamlet</h4>
+                            <p class="book-author">William Shakespeare</p>
+                            <p class="book-description">Profound exploration of revenge, madness, and mortality in the greatest tragedy of English literature.</p>
+                            <span class="book-year">1603</span>
+                        </div>
+
+                        <!-- World Literature -->
+                        <div class="book-card" data-book-info="cervantes don quixote novel">
+                            <div class="book-cover">
+                                <i data-lucide="shield-check"></i>
+                            </div>
+                            <h4 class="book-title">Don Quixote</h4>
+                            <p class="book-author">Miguel de Cervantes</p>
+                            <p class="book-description">First modern novel exploring the relationship between reality and idealism through the adventures of a deluded knight.</p>
+                            <span class="book-year">1605</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="goethe faust german literature">
+                            <div class="book-cover">
+                                <i data-lucide="flame"></i>
+                            </div>
+                            <h4 class="book-title">Faust</h4>
+                            <p class="book-author">Johann Wolfgang von Goethe</p>
+                            <p class="book-description">Philosophical drama exploring the human condition, knowledge, and the price of unlimited power.</p>
+                            <span class="book-year">1808</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="joyce ulysses modernist literature">
+                            <div class="book-cover">
+                                <i data-lucide="compass"></i>
+                            </div>
+                            <h4 class="book-title">Ulysses</h4>
+                            <p class="book-author">James Joyce</p>
+                            <p class="book-description">Revolutionary modernist novel using stream of consciousness to portray a single day in Dublin.</p>
+                            <span class="book-year">1922</span>
+                        </div>
+
+                        <!-- Literary Criticism -->
+                        <div class="book-card" data-book-info="aristotle poetics literary theory">
+                            <div class="book-cover">
+                                <i data-lucide="theater"></i>
+                            </div>
+                            <h4 class="book-title">Poetics</h4>
+                            <p class="book-author">Aristotle</p>
+                            <p class="book-description">Foundational work of literary theory analyzing tragedy, epic poetry, and the principles of dramatic art.</p>
+                            <span class="book-year">c. 335 BC</span>
+                        </div>
+
+                        <!-- Art History -->
+                        <div class="book-card" data-book-info="gombrich story art history">
+                            <div class="book-cover">
+                                <i data-lucide="palette"></i>
+                            </div>
+                            <h4 class="book-title">The Story of Art</h4>
+                            <p class="book-author">Ernst Gombrich</p>
+                            <p class="book-description">Comprehensive and accessible survey of art history from prehistoric cave paintings to modern art.</p>
+                            <span class="book-year">1950</span>
+                        </div>
+
+                        <div class="book-card" data-book-info="benjamin work art mechanical reproduction">
+                            <div class="book-cover">
+                                <i data-lucide="camera"></i>
+                            </div>
+                            <h4 class="book-title">The Work of Art in the Age of Mechanical Reproduction</h4>
+                            <p class="book-author">Walter Benjamin</p>
+                            <p class="book-description">Influential essay on how technology transforms art and its social function in modern society.</p>
+                            <span class="book-year">1936</span>
+                        </div>
+
+                        <!-- Music Theory -->
+                        <div class="book-card" data-book-info="bernstein unanswered question music">
+                            <div class="book-cover">
+                                <i data-lucide="music"></i>
+                            </div>
+                            <h4 class="book-title">The Unanswered Question</h4>
+                            <p class="book-author">Leonard Bernstein</p>
+                            <p class="book-description">Musical lectures exploring the relationship between music and language, meaning and communication.</p>
+                            <span class="book-year">1976</span>
+                        </div>
                     </div>
                 </div>
             </div>
