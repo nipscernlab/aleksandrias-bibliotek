@@ -445,6 +445,145 @@
             display: inline-block;
         }
         
+
+        .cultural-category {
+            margin-bottom: 4rem;
+        }
+
+        .category-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .category-title i {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .category-title {
+            font-family: var(--font-primary);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .cultural-category::after {
+            background: var(--bg-card);
+            color: var(--text-muted);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-left: auto;
+        }
+
+        /* Cultural items grid */
+        .cultural-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .cultural-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cultural-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-purple), var(--secondary-purple));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .cultural-item:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--primary-purple);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg), var(--shadow-purple);
+        }
+
+        .cultural-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .cultural-cover {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--dark-purple), var(--primary-purple));
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cultural-cover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+        }
+
+        .cultural-title {
+            font-family: var(--font-primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+
+        .cultural-creator {
+            color: var(--primary-purple);
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .cultural-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+        }
+
+        .cultural-year {
+            background: var(--bg-secondary);
+            color: var(--text-muted);
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            display: inline-block;
+        }
+        
         /* Media section */
         .media-section {
             background: var(--bg-secondary);
@@ -952,7 +1091,7 @@
 
                         <div class="book-card" data-book-info="heisenberg quantum physics philosophy">
                             <div class="book-cover">
-                                <i data-lucide="wave"></i>
+                                <i data-lucide="audio-waveform"></i>
                             </div>
                             <h4 class="book-title">Physics and Philosophy</h4>
                             <p class="book-author">Werner Heisenberg</p>
@@ -983,7 +1122,7 @@
 
                         <div class="book-card" data-book-info="atkins physical chemistry molecular approach">
                             <div class="book-cover">
-                                <i data-lucide="molecule"></i>
+                                <i data-lucide="dna"></i>
                             </div>
                             <h4 class="book-title">Physical Chemistry: A Molecular Approach</h4>
                             <p class="book-author">Peter Atkins</p>
@@ -1140,7 +1279,7 @@
                         <!-- Classical Philosophy -->
                         <div class="book-card" data-book-info="plato republic justice political philosophy">
                             <div class="book-cover">
-                                <i data-lucide="scales"></i>
+                                <i data-lucide="scale"></i>
                             </div>
                             <h4 class="book-title">Republic</h4>
                             <p class="book-author">Plato</p>
@@ -1160,7 +1299,7 @@
 
                         <div class="book-card" data-book-info="confucius analects eastern wisdom ethics">
                             <div class="book-cover">
-                                <i data-lucide="yin-yang"></i>
+                                <i data-lucide="bird"></i>
                             </div>
                             <h4 class="book-title">The Analects</h4>
                             <p class="book-author">Confucius</p>
@@ -1182,7 +1321,7 @@
 
                         <div class="book-card" data-book-info="hume enquiry human understanding empiricism">
                             <div class="book-cover">
-                                <i data-lucide="question-mark"></i>
+                                <i data-lucide="file-question-mark"></i>
                             </div>
                             <h4 class="book-title">An Enquiry Concerning Human Understanding</h4>
                             <p class="book-author">David Hume</p>
@@ -1233,7 +1372,7 @@
 
                         <div class="book-card" data-book-info="rawls theory justice fairness">
                             <div class="book-cover">
-                                <i data-lucide="balance-scale"></i>
+                                <i data-lucide="scale"></i>
                             </div>
                             <h4 class="book-title">A Theory of Justice</h4>
                             <p class="book-author">John Rawls</p>
@@ -1254,7 +1393,7 @@
                         <!-- Eastern Philosophy -->
                         <div class="book-card" data-book-info="laozi tao te ching taoism">
                             <div class="book-cover">
-                                <i data-lucide="yin-yang"></i>
+                                <i data-lucide="bird"></i>
                             </div>
                             <h4 class="book-title">Tao Te Ching</h4>
                             <p class="book-author">Laozi</p>
@@ -1264,7 +1403,7 @@
 
                         <div class="book-card" data-book-info="nagarjuna middle way buddhist philosophy">
                             <div class="book-cover">
-                                <i data-lucide="lotus"></i>
+                                <i data-lucide="flower"></i>
                             </div>
                             <h4 class="book-title">The Fundamental Wisdom of the Middle Way</h4>
                             <p class="book-author">Nagarjuna</p>
@@ -1462,7 +1601,7 @@
 
                         <div class="book-card" data-book-info="mead coming age samoa cultural">
                             <div class="book-cover">
-                                <i data-lucide="palm-tree"></i>
+                                <i data-lucide="tree-palm"></i>
                             </div>
                             <h4 class="book-title">Coming of Age in Samoa</h4>
                             <p class="book-author">Margaret Mead</p>
@@ -1590,7 +1729,473 @@
                 </div>
             </div>
         </section>
+        
+        <!-- Cultural Enrichment Section -->
+        <section class="section" id="cultural-enrichment">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Cultural Enrichment</h2>
+                    <p class="section-description">
+                        Explore the artistic and cultural masterpieces that have shaped human civilization across all continents and eras
+                    </p>
+                </div>
 
+                <!-- Film & Cinema -->
+                <div class="cultural-category">
+                    <h3 class="category-title">
+                        <i data-lucide="film"></i>
+                        Film & Cinema
+                    </h3>
+                    <div class="cultural-grid">
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="user"></i>
+                            </div>
+                            <h4 class="cultural-title">Modern Times</h4>
+                            <p class="cultural-creator">Charlie Chaplin</p>
+                            <p class="cultural-description">Iconic silent film critiquing industrialization and its impact on humanity.</p>
+                            <span class="cultural-year">1936</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="ship"></i>
+                            </div>
+                            <h4 class="cultural-title">Battleship Potemkin</h4>
+                            <p class="cultural-creator">Sergei Eisenstein</p>
+                            <p class="cultural-description">Revolutionary Soviet film pioneering montage techniques and political cinema.</p>
+                            <span class="cultural-year">1925</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="swords"></i>
+                            </div>
+                            <h4 class="cultural-title">Seven Samurai</h4>
+                            <p class="cultural-creator">Akira Kurosawa</p>
+                            <p class="cultural-description">Epic Japanese film exploring honor, sacrifice, and social change.</p>
+                            <span class="cultural-year">1954</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="skull"></i>
+                            </div>
+                            <h4 class="cultural-title">The Seventh Seal</h4>
+                            <p class="cultural-creator">Ingmar Bergman</p>
+                            <p class="cultural-description">Philosophical meditation on death, faith, and the meaning of existence.</p>
+                            <span class="cultural-year">1957</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="train"></i>
+                            </div>
+                            <h4 class="cultural-title">Pather Panchali</h4>
+                            <p class="cultural-creator">Satyajit Ray</p>
+                            <p class="cultural-description">Groundbreaking Indian cinema exploring rural life and human dignity.</p>
+                            <span class="cultural-year">1955</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="globe"></i>
+                            </div>
+                            <h4 class="cultural-title">Black God, White Devil</h4>
+                            <p class="cultural-creator">Glauber Rocha</p>
+                            <p class="cultural-description">Brazilian Cinema Novo masterpiece about social revolution and mysticism.</p>
+                            <span class="cultural-year">1964</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="sun"></i>
+                            </div>
+                            <h4 class="cultural-title">Black Girl</h4>
+                            <p class="cultural-creator">Ousmane Sembène</p>
+                            <p class="cultural-description">Pioneering African cinema exploring colonialism and identity.</p>
+                            <span class="cultural-year">1966</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="stars"></i>
+                            </div>
+                            <h4 class="cultural-title">2001: A Space Odyssey</h4>
+                            <p class="cultural-creator">Stanley Kubrick</p>
+                            <p class="cultural-description">Visionary science fiction exploring human evolution and artificial intelligence.</p>
+                            <span class="cultural-year">1968</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Music -->
+                <div class="cultural-category">
+                    <h3 class="category-title">
+                        <i data-lucide="music"></i>
+                        Music & Compositions
+                    </h3>
+                    <div class="cultural-grid">
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="piano"></i>
+                            </div>
+                            <h4 class="cultural-title">The Art of Fugue</h4>
+                            <p class="cultural-creator">J.S. Bach</p>
+                            <p class="cultural-description">Mathematical masterpiece exploring contrapuntal techniques and musical logic.</p>
+                            <span class="cultural-year">1751</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="church"></i>
+                            </div>
+                            <h4 class="cultural-title">Requiem in D minor</h4>
+                            <p class="cultural-creator">Wolfgang Amadeus Mozart</p>
+                            <p class="cultural-description">Profound meditation on death and transcendence, left incomplete at Mozart's death.</p>
+                            <span class="cultural-year">1791</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="heart"></i>
+                            </div>
+                            <h4 class="cultural-title">Symphony No. 9 "Ode to Joy"</h4>
+                            <p class="cultural-creator">Ludwig van Beethoven</p>
+                            <p class="cultural-description">Revolutionary symphony celebrating universal brotherhood and human dignity.</p>
+                            <span class="cultural-year">1824</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="waves"></i>
+                            </div>
+                            <h4 class="cultural-title">Raga Bhairav</h4>
+                            <p class="cultural-creator">Indian Classical Tradition</p>
+                            <p class="cultural-description">Sacred morning raga expressing devotion and spiritual awakening.</p>
+                            <span class="cultural-year">Ancient</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="theater"></i>
+                            </div>
+                            <h4 class="cultural-title">The Peony Pavilion</h4>
+                            <p class="cultural-creator">Kunqu Opera</p>
+                            <p class="cultural-description">Classic Chinese opera exploring love, death, and resurrection.</p>
+                            <span class="cultural-year">1598</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="drum"></i>
+                            </div>
+                            <h4 class="cultural-title">Polyrhythmic Traditions</h4>
+                            <p class="cultural-creator">West African Music</p>
+                            <p class="cultural-description">Complex rhythmic structures foundational to jazz, blues, and world music.</p>
+                            <span class="cultural-year">Traditional</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="guitar"></i>
+                            </div>
+                            <h4 class="cultural-title">Concierto de Aranjuez</h4>
+                            <p class="cultural-creator">Joaquín Rodrigo</p>
+                            <p class="cultural-description">Iconic Spanish guitar concerto evoking the gardens of Aranjuez palace.</p>
+                            <span class="cultural-year">1939</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="radio"></i>
+                            </div>
+                            <h4 class="cultural-title">Gesang der Jünglinge</h4>
+                            <p class="cultural-creator">Karlheinz Stockhausen</p>
+                            <p class="cultural-description">Pioneering electronic music combining human voice with synthesized sounds.</p>
+                            <span class="cultural-year">1956</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Arts -->
+                <div class="cultural-category">
+                    <h3 class="category-title">
+                        <i data-lucide="palette"></i>
+                        Visual Arts & Painting
+                    </h3>
+                    <div class="cultural-grid">
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="eye"></i>
+                            </div>
+                            <h4 class="cultural-title">Mona Lisa</h4>
+                            <p class="cultural-creator">Leonardo da Vinci</p>
+                            <p class="cultural-description">Enigmatic portrait representing the pinnacle of Renaissance art and technique.</p>
+                            <span class="cultural-year">1503</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="hand"></i>
+                            </div>
+                            <h4 class="cultural-title">The Creation of Adam</h4>
+                            <p class="cultural-creator">Michelangelo</p>
+                            <p class="cultural-description">Iconic fresco depicting the biblical creation story on the Sistine Chapel ceiling.</p>
+                            <span class="cultural-year">1512</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="star"></i>
+                            </div>
+                            <h4 class="cultural-title">The Starry Night</h4>
+                            <p class="cultural-creator">Vincent van Gogh</p>
+                            <p class="cultural-description">Swirling night sky expressing emotional turbulence and cosmic wonder.</p>
+                            <span class="cultural-year">1889</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="bomb"></i>
+                            </div>
+                            <h4 class="cultural-title">Guernica</h4>
+                            <p class="cultural-creator">Pablo Picasso</p>
+                            <p class="cultural-description">Cubist masterpiece protesting the horrors of war and fascism.</p>
+                            <span class="cultural-year">1937</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="mountain"></i>
+                            </div>
+                            <h4 class="cultural-title">The Great Wave off Kanagawa</h4>
+                            <p class="cultural-creator">Katsushika Hokusai</p>
+                            <p class="cultural-description">Iconic Japanese woodblock print symbolizing nature's power and beauty.</p>
+                            <span class="cultural-year">1831</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="circle"></i>
+                            </div>
+                            <h4 class="cultural-title">Composition VIII</h4>
+                            <p class="cultural-creator">Wassily Kandinsky</p>
+                            <p class="cultural-description">Abstract masterpiece exploring pure form, color, and spiritual expression.</p>
+                            <span class="cultural-year">1923</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="venetian-mask"></i>
+                            </div>
+                            <h4 class="cultural-title">African Masks</h4>
+                            <p class="cultural-creator">Various African Cultures</p>
+                            <p class="cultural-description">Spiritual and ceremonial art influencing modern sculpture and expressionism.</p>
+                            <span class="cultural-year">Traditional</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="crown"></i>
+                            </div>
+                            <h4 class="cultural-title">Napoleon Crossing the Alps</h4>
+                            <p class="cultural-creator">Jacques-Louis David</p>
+                            <p class="cultural-description">Neoclassical painting depicting heroic leadership and historical grandeur.</p>
+                            <span class="cultural-year">1801</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Architecture & Monuments -->
+                <div class="cultural-category">
+                    <h3 class="category-title">
+                        <i data-lucide="building"></i>
+                        Architecture & Monuments
+                    </h3>
+                    <div class="cultural-grid">
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="triangle"></i>
+                            </div>
+                            <h4 class="cultural-title">Pyramids of Giza</h4>
+                            <p class="cultural-creator">Ancient Egyptian Civilization</p>
+                            <p class="cultural-description">Monumental tombs demonstrating advanced engineering and cosmic alignment.</p>
+                            <span class="cultural-year">2580 BC</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="columns"></i>
+                            </div>
+                            <h4 class="cultural-title">The Parthenon</h4>
+                            <p class="cultural-creator">Ancient Greek Civilization</p>
+                            <p class="cultural-description">Perfect embodiment of classical architecture and democratic ideals.</p>
+                            <span class="cultural-year">447 BC</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="castle"></i>
+                            </div>
+                            <h4 class="cultural-title">Angkor Wat</h4>
+                            <p class="cultural-creator">Khmer Empire</p>
+                            <p class="cultural-description">Massive temple complex representing Hindu cosmology and architectural mastery.</p>
+                            <span class="cultural-year">1113 AD</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="mountain-snow"></i>
+                            </div>
+                            <h4 class="cultural-title">Machu Picchu</h4>
+                            <p class="cultural-creator">Inca Civilization</p>
+                            <p class="cultural-description">Mountain citadel showcasing advanced engineering and astronomical knowledge.</p>
+                            <span class="cultural-year">1450 AD</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="church"></i>
+                            </div>
+                            <h4 class="cultural-title">Notre-Dame de Paris</h4>
+                            <p class="cultural-creator">Gothic Architecture</p>
+                            <p class="cultural-description">Gothic masterpiece representing medieval spirituality and architectural innovation.</p>
+                            <span class="cultural-year">1345</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="home"></i>
+                            </div>
+                            <h4 class="cultural-title">Fallingwater</h4>
+                            <p class="cultural-creator">Frank Lloyd Wright</p>
+                            <p class="cultural-description">Organic architecture harmonizing human habitation with natural environment.</p>
+                            <span class="cultural-year">1939</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="waves"></i>
+                            </div>
+                            <h4 class="cultural-title">Sydney Opera House</h4>
+                            <p class="cultural-creator">Jørn Utzon</p>
+                            <p class="cultural-description">Modernist architectural icon inspired by natural forms and maritime culture.</p>
+                            <span class="cultural-year">1973</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="infinity"></i>
+                            </div>
+                            <h4 class="cultural-title">Guggenheim Museum Bilbao</h4>
+                            <p class="cultural-creator">Frank Gehry</p>
+                            <p class="cultural-description">Deconstructivist architecture transforming urban landscape and museum design.</p>
+                            <span class="cultural-year">1997</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contemporary Art -->
+                <div class="cultural-category">
+                    <h3 class="category-title">
+                        <i data-lucide="sparkles"></i>
+                        Contemporary Art & Installations
+                    </h3>
+                    <div class="cultural-grid">
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="bike"></i>
+                            </div>
+                            <h4 class="cultural-title">Bicycle Wheel</h4>
+                            <p class="cultural-creator">Marcel Duchamp</p>
+                            <p class="cultural-description">Readymade artwork challenging traditional concepts of art and authorship.</p>
+                            <span class="cultural-year">1913</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="panda"></i>
+                            </div>
+                            <h4 class="cultural-title">Dropping a Han Dynasty Urn</h4>
+                            <p class="cultural-creator">Ai Weiwei</p>
+                            <p class="cultural-description">Provocative performance questioning cultural value and artistic destruction.</p>
+                            <span class="cultural-year">1995</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="crown"></i>
+                            </div>
+                            <h4 class="cultural-title">Napoleon Leading the Army</h4>
+                            <p class="cultural-creator">Kehinde Wiley</p>
+                            <p class="cultural-description">Contemporary reinterpretation of classical portraiture addressing power and representation.</p>
+                            <span class="cultural-year">2005</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="lightbulb"></i>
+                            </div>
+                            <h4 class="cultural-title">The Weather Project</h4>
+                            <p class="cultural-creator">Olafur Eliasson</p>
+                            <p class="cultural-description">Immersive installation exploring perception, light, and environmental consciousness.</p>
+                            <span class="cultural-year">2003</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- World Heritage Sites -->
+                <div class="cultural-category">
+                    <h3 class="category-title">
+                        <i data-lucide="globe"></i>
+                        World Heritage & Sacred Sites
+                    </h3>
+                    <div class="cultural-grid">
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="flame"></i>
+                            </div>
+                            <h4 class="cultural-title">Cave Paintings of Lascaux</h4>
+                            <p class="cultural-creator">Paleolithic Artists</p>
+                            <p class="cultural-description">Earliest known artistic expression revealing prehistoric human consciousness.</p>
+                            <span class="cultural-year">17,000 BC</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="sun"></i>
+                            </div>
+                            <h4 class="cultural-title">Stonehenge</h4>
+                            <p class="cultural-creator">Neolithic Civilization</p>
+                            <p class="cultural-description">Megalithic monument demonstrating ancient astronomical and spiritual knowledge.</p>
+                            <span class="cultural-year">3100 BC</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="flower"></i>
+                            </div>
+                            <h4 class="cultural-title">Borobudur Temple</h4>
+                            <p class="cultural-creator">Buddhist Civilization</p>
+                            <p class="cultural-description">Massive Buddhist temple representing the path to enlightenment.</p>
+                            <span class="cultural-year">750 AD</span>
+                        </div>
+
+                        <div class="cultural-item">
+                            <div class="cultural-cover">
+                                <i data-lucide="shield"></i>
+                            </div>
+                            <h4 class="cultural-title">Great Wall of China</h4>
+                            <p class="cultural-creator">Chinese Civilization</p>
+                            <p class="cultural-description">Monumental fortification representing collective human achievement and endurance.</p>
+                            <span class="cultural-year">220 BC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <!-- Media Section -->
         <section class="media-section" id="media">
             <div class="container">
