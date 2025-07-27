@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Knowledge Curriculum: A Deep Journey Through Human Understanding</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Icons (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* --- CSS Variables --- */
+        :root {
+            --bg-color: #f8f9fa;
+            --main-container-bg: #ffffff;
+            --text-color: #343a40;
+            --primary-color: #005f73;
+            --secondary-color: #0a9396;
+            --accent-color: #94d2bd;
+            --border-color: #dee2e6;
+            --shadow-color: rgba(0, 0, 0, 0.05);
+            --highlight-bg: #e9ecef;
+
+            --font-primary: 'Inter', sans-serif;
+            --font-headings: 'Playfair Display', serif;
+            
+            --spacing-unit: 1rem;
+            --border-radius: 8px;
+        }
+
+        /* --- General Setup --- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* --- Main Layout & Typography --- */
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 2);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: calc(var(--spacing-unit) * 2);
+            position: relative;
+        }
+        
+        h1 {
+            font-family: var(--font-headings);
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-unit);
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-family: var(--font-headings);
+            font-size: 2rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: calc(var(--spacing-unit) * 0.5);
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+
+        h3 {
+            font-family: var(--font-primary);
+            font-weight: 600;
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+            margin-top: calc(var(--spacing-unit) * 2);
+            margin-bottom: var(--spacing-unit);
+        }
+        
+        h4 {
+            font-family: var(--font-primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-color);
+            margin-top: calc(var(--spacing-unit) * 1.5);
+            margin-bottom: calc(var(--spacing-unit) * 0.75);
+        }
+
+        p, li {
+            margin-bottom: var(--spacing-unit);
+        }
+
+        p.intro {
+            font-size: 1.1rem;
+            color: #495057;
+            max-width: 80ch;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        strong {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--accent-color);
+            padding-left: calc(var(--spacing-unit) * 1.5);
+            margin: calc(var(--spacing-unit) * 2) 0;
+            font-style: italic;
+            color: #6c757d;
+        }
+
+        /* --- Collapsible Section Styling --- */
+        .collapsible-section {
+            background-color: var(--main-container-bg);
+            border-radius: var(--border-radius);
+            margin-bottom: calc(var(--spacing-unit) * 1.5);
+            box-shadow: 0 4px 15px var(--shadow-color);
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .collapsible-section.year-panel {
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .section-header {
+            cursor: pointer;
+            padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .icon {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            transition: transform 0.4s ease;
+        }
+        
+        .section-header.active .icon {
+            transform: rotate(180deg);
+        }
+
+        .section-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.5s ease-in-out;
+        }
+
+        .section-content.show {
+            grid-template-rows: 1fr;
+        }
+
+        .content-wrapper {
+            overflow-y: auto;
+            max-height: 80vh; /* Prevents content from being cut off */
+            padding: 0 calc(var(--spacing-unit) * 2);
+            min-height: 0;
+        }
+        
+        .section-content.show .content-wrapper {
+             padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 2);
+        }
+
+
+        /* --- List & Cultural Enrichment Styling --- */
+        ul, ol {
+            padding-left: calc(var(--spacing-unit) * 2);
+            list-style-position: outside;
+        }
+        
+        ol li::marker {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        ul li::marker {
+            color: var(--secondary-color);
+        }
+
+        li {
+            padding-left: 0.5rem;
+        }
+
+        .cultural-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: calc(var(--spacing-unit) * 2);
+        }
+
+        .cultural-grid h5 {
+            font-size: 1.1em;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        /* --- Utility & Feature Styling --- */
+        #search-container {
+            margin: 1.5rem auto 0;
+            max-width: 500px;
+            position: relative;
+        }
+
+        #search-input {
+            width: 100%;
+            padding: 12px 40px 12px 20px;
+            border-radius: 50px;
+            border: 1px solid var(--border-color);
+            font-size: 1rem;
+            font-family: var(--font-primary);
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        #search-input:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(10, 147, 150, 0.2);
+        }
+
+        #search-container .fa-search {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+        }
+        
+        mark {
+            background-color: #f7d977;
+            border-radius: 3px;
+            padding: 1px 3px;
+        }
+
+        #toTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            padding-left: 18px;
+            padding-top: 10px;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: background-color 0.3s, opacity 0.3s, transform 0.3s;
+        }
+
+        #toTopBtn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <a id="toTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></a>
+
+    <main class="container">
+        <header>
+            <h1>Comprehensive Knowledge Curriculum</h1>
+            <p class="intro">A Deep Journey Through Human Understanding</p>
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="Search curriculum...">
+                <i class="fas fa-search"></i>
+            </div>
+        </header>
+
+        <section class="introduction">
+            <p>This curriculum represents a systematic approach to acquiring comprehensive knowledge across all major domains of human understanding. Designed for dedicated learners willing to commit 4 hours daily over 5 years, it aims to create both a perfectly structured mental framework and fill it with the essential content of human knowledge.</p>
+            <p>The curriculum is built on the principle that logic and mathematics form the vessel while other domains provide the content. By mastering logical systems first and maintaining them at maximum depth throughout, students develop the cognitive tools necessary to understand, evaluate, and contribute to all other fields of knowledge.</p>
+            <p><strong>Assumption:</strong> Student begins with literacy and basic reasoning ability but zero specialized knowledge in any domain.</p>
+        </section>
+
+        <!-- YEAR 1 -->
+        <div class="collapsible-section year-panel">
+            <div class="section-header">
+                <h2>YEAR 1: FOUNDATIONS</h2>
+                <i class="icon fas fa-chevron-down"></i>
+            </div>
+            <div class="section-content">
+                <div class="content-wrapper">
+                    <h3>Building the Logical and Mathematical Framework</h3>
+                    <h4>Core Logic & Mathematical Reasoning</h4>
+                    <p><strong>Logic Sequence (Months 1-8)</strong></p>
+                    <h5>Classical & Modern Foundations</h5>
+                    <ol>
+                        <li><strong>Aristotle</strong> - <em>Organon (complete)</em> - Foundation of Western logic</li>
+                        <li><strong>Gautama</strong> - <em>Nyāya-sūtra</em> - Classical Indian five-part syllogism</li>
+                        <li><strong>Dignāga</strong> - <em>Pramāṇa-samuccaya (selections)</em> - Buddhist logic and inference theory</li>
+                        <li><strong>Mozi</strong> - <em>Mohist Canons</em> - Early Chinese logical principles</li>
+                        <li><strong>Avicenna (Ibn Sīnā)</strong> - <em>Comments on Aristotle's Organon</em> - Islamic modal and temporal logic</li>
+                        <li><strong>Averroes (Ibn Rushd)</strong> - <em>Long Commentary on Aristotle's Logic</em> - Medieval Aristotelian synthesis</li>
+                        <li><strong>Gottlob Frege</strong> - <em>Begriffsschrift</em> - Birth of modern predicate logic</li>
+                        <li><strong>George Boole</strong> - <em>An Investigation of the Laws of Thought</em> - Algebraic logic foundations</li>
+                        <li><strong>Augustus De Morgan</strong> - <em>Formal Logic</em> - Relational logic and De Morgan's laws</li>
+                        <li><strong>Bertrand Russell</strong> - <em>The Problems of Philosophy</em> - Logic and epistemology</li>
+                        <li><strong>Irving M. Copi & Carl Cohen</strong> - <em>Introduction to Logic</em> - Comprehensive classical logic</li>
+                        <li><strong>Elliott Mendelson</strong> - <em>Introduction to Mathematical Logic</em> - Bridge to formal systems</li>
+                    </ol>
+                    <h5>Advanced Formal Systems</h5>
+                    <ol start="13">
+                        <li><strong>Ludwig Wittgenstein</strong> - <em>Tractus Logico-Philosophicus</em> - Limits of language and logic</li>
+                        <li><strong>Gerhard Gentzen</strong> - <em>Collected Papers (natural deduction selections)</em> - Proof theory foundations</li>
+                        <li><strong>Herbert B. Enderton</strong> - <em>A Mathematical Introduction to Logic</em> - Modern formal logic</li>
+                    </ol>
+                    <p><strong>Mathematics Sequence (Months 9-12)</strong></p>
+                    <ul>
+                        <li><strong>Euclid</strong> - <em>Elements (Books I-VI, VII-IX)</em> - Geometric and number theory foundations</li>
+                        <li><strong>Al-Khwarizmi</strong> - <em>The Compendious Book on Calculation by Completion and Balancing</em> - Algebraic methods</li>
+                        <li><strong>René Descartes</strong> - <em>La Géométrie</em> - Coordinate geometry and analytic methods</li>
+                        <li><strong>Michael Spivak</strong> - <em>Calculus</em> - Rigorous single-variable calculus</li>
+                    </ul>
+
+                    <h4>Supporting Knowledge Domains</h4>
+                    <h5>Philosophy of Mind & Knowledge</h5>
+                    <ul>
+                        <li><strong>Plato</strong> - <em>Meno, Republic (Book VII)</em> - Theory of knowledge and mathematical discovery</li>
+                        <li><strong>René Descartes</strong> - <em>Meditations on First Philosophy</em> - Methodical doubt and certainty</li>
+                        <li><strong>David Hume</strong> - <em>An Enquiry Concerning Human Understanding</em> - Empiricism and limits of knowledge</li>
+                        <li><strong>Immanuel Kant</strong> - <em>Critique of Pure Reason (selections)</em> - Synthetic a priori knowledge</li>
+                    </ul>
+                    <h5>Natural Sciences Foundation</h5>
+                    <ul>
+                        <li><strong>Isaac Newton</strong> - <em>Principia Mathematica (selections)</em> - Mathematical physics</li>
+                        <li><strong>Charles Darwin</strong> - <em>On the Origin of Species</em> - Evolution and natural selection</li>
+                        <li><strong>Dmitri Mendeleev</strong> - <em>Principles of Chemistry (selections)</em> - Periodic organization of matter</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- YEAR 2 -->
+        <div class="collapsible-section year-panel">
+            <div class="section-header">
+                <h2>YEAR 2: EXPANDING LOGICAL SYSTEMS</h2>
+                <i class="icon fas fa-chevron-down"></i>
+            </div>
+            <div class="section-content">
+                <div class="content-wrapper">
+                    <h3>Advanced Logic, Non-Classical Systems, and Scientific Method</h3>
+                    <h4>Advanced Logic & Computation (Months 13-20)</h4>
+                    <h5>Metamathematics, Non-Classical, and Computational Logic</h5>
+                     <ol>
+                        <li><strong>Stephen Cole Kleene</strong> - <em>Introduction to Metamathematics</em> - Recursion theory and proof systems</li>
+                        <li><strong>Dirk van Dalen</strong> - <em>Logic and Structure</em> - Model theory and formal syntax</li>
+                        <li><strong>Kurt Gödel</strong> - <em>On Formally Undecidable Propositions</em> - Incompleteness theorems</li>
+                        <li><strong>Alfred Tarski</strong> - <em>Logic, Semantics, Metamathematics</em> - Truth definitions and model theory</li>
+                        <li><strong>Alan Turing</strong> - <em>On Computable Numbers</em> - Computability theory</li>
+                        <li><strong>Alonzo Church</strong> - <em>The Calculi of Lambda-Conversion</em> - Lambda calculus foundations</li>
+                        <li><strong>Arend Heyting</strong> - <em>Intuitionism: An Introduction</em> - Constructive logic foundations</li>
+                        <li><strong>C.I. Lewis</strong> - <em>A Survey of Symbolic Logic</em> - Modal logic systems S1-S5</li>
+                        <li><strong>Jan Łukasiewicz</strong> - <em>Selected Works (many-valued logic papers)</em> - Three-valued and infinite-valued logics</li>
+                        <li><strong>Saul Kripke</strong> - <em>Naming and Necessity</em> - Modal semantics and possible worlds</li>
+                        <li><strong>Arthur Prior</strong> - <em>Time and Modality</em> - Temporal logic foundations</li>
+                        <li><strong>Graham Priest</strong> - <em>An Introduction to Non-Classical Logic</em> - Paraconsistent and relevant logics</li>
+                        <li><strong>Newton da Costa</strong> - <em>Ensaio sobre os Fundamentos da Lógica</em> - Paraconsistent logic systems</li>
+                        <li><strong>Susan Haack</strong> - <em>Philosophy of Logics</em> - Logic pluralism and metalogical questions</li>
+                        <li><strong>Michael Sipser</strong> - <em>Introduction to the Theory of Computation</em> - Formal language theory</li>
+                        <li><strong>Per Martin-Löf</strong> - <em>Intuitionistic Type Theory</em> - Dependent types and constructive foundations</li>
+                    </ol>
+
+                    <p><strong>Mathematics Continuation (Months 21-24)</strong></p>
+                    <ul>
+                        <li><strong>Stephen Abbott</strong> - <em>Understanding Analysis</em> - Rigorous real analysis</li>
+                        <li><strong>Sheldon Axler</strong> - <em>Linear Algebra Done Right</em> - Vector spaces and linear transformations</li>
+                        <li><strong>Sheldon Ross</strong> - <em>A First Course in Probability</em> - Probability theory foundations</li>
+                        <li><strong>Gilbert Strang</strong> - <em>Introduction to Linear Algebra</em> - Applied linear algebra</li>
+                    </ul>
+
+                    <h4>Scientific Revolution & Method</h4>
+                    <ul>
+                        <li><strong>Galileo Galilei</strong> - <em>Dialogue Concerning the Two Chief World Systems</em> - Experimental methodology</li>
+                        <li><strong>Johannes Kepler</strong> - <em>Astronomia Nova</em> - Mathematical astronomy and empirical observation</li>
+                        <li><strong>Francis Bacon</strong> - <em>Novum Organum</em> - Inductive scientific method</li>
+                        <li><strong>Karl Popper</strong> - <em>The Logic of Scientific Discovery</em> - Falsificationism and philosophy of science</li>
+                        <li><strong>Thomas Kuhn</strong> - <em>The Structure of Scientific Revolutions</em> - Paradigm shifts in science</li>
+                        <li><strong>Ibn al-Haytham (Alhazen)</strong> - <em>Book of Optics</em> - Islamic experimental methodology</li>
+                        <li><strong>Shen Kuo</strong> - <em>Dream Pool Essays (selections)</em> - Chinese empirical natural philosophy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- YEAR 3 -->
+        <div class="collapsible-section year-panel">
+            <div class="section-header">
+                <h2>YEAR 3: NATURAL WORLD & HUMAN SYSTEMS</h2>
+                 <i class="icon fas fa-chevron-down"></i>
+            </div>
+            <div class="section-content">
+                <div class="content-wrapper">
+                    <h3>Physics, Biology, Medicine, Earth Sciences, and Social Sciences</h3>
+                    <h4>Physical & Earth Sciences (Months 25-30)</h4>
+                    <ul>
+                        <li><strong>Richard Feynman</strong> - <em>The Feynman Lectures on Physics (Volumes I-II)</em> - Modern physics fundamentals</li>
+                        <li><strong>James Clerk Maxwell</strong> - <em>A Treatise on Electricity and Magnetism (key sections)</em> - Classical field theory</li>
+                        <li><strong>Albert Einstein</strong> - <em>Relativity: The Special and the General Theory</em> - Revolutionary spacetime physics</li>
+                        <li><strong>Peter Atkins</strong> - <em>Physical Chemistry: A Molecular Approach</em> - Contemporary chemical theory</li>
+                        <li><strong>Frank Press & Raymond Siever</strong> - <em>Understanding Earth</em> - Comprehensive geology</li>
+                        <li><strong>Donald Prothero</strong> - <em>Evolution: What the Fossils Say and Why It Matters</em> - Paleontology and evolutionary evidence</li>
+                    </ul>
+                    
+                    <h4>Biology & Medicine (Months 31-36)</h4>
+                    <ul>
+                        <li><strong>Neil Campbell & Jane Reece</strong> - <em>Campbell Biology</em> - Comprehensive modern biology</li>
+                        <li><strong>Bruce Alberts et al.</strong> - <em>Molecular Biology of the Cell</em> - Cellular mechanisms and processes</li>
+                        <li><strong>Elaine Marieb & Katja Hoehn</strong> - <em>Human Anatomy & Physiology</em> - Human body systems</li>
+                        <li><strong>Vinay Kumar, Abul Abbas & Jon Aster</strong> - <em>Robbins Basic Pathology</em> - Disease processes and pathophysiology</li>
+                        <li><strong>Eric Kandel et al.</strong> - <em>Principles of Neural Science (key chapters)</em> - Neuroscience foundations</li>
+                    </ul>
+                    
+                    <h4>Human Systems & Society</h4>
+                    <h5>Psychology & Cognitive Science</h5>
+                    <ul>
+                        <li><strong>William James</strong> - <em>Principles of Psychology (key chapters)</em> - Foundations of psychological science</li>
+                        <li><strong>Sigmund Freud</strong> - <em>The Interpretation of Dreams (selections)</em> - Unconscious mental processes</li>
+                        <li><strong>Carl Jung</strong> - <em>Man and His Symbols</em> - Archetypal psychology and collective unconscious</li>
+                        <li><strong>Daniel Kahneman</strong> - <em>Thinking, Fast and Slow</em> - Cognitive biases and decision-making research</li>
+                    </ul>
+                    <h5>Sociology & Anthropology</h5>
+                    <ul>
+                        <li><strong>Émile Durkheim</strong> - <em>The Rules of Sociological Method</em> - Scientific approach to social phenomena</li>
+                        <li><strong>Max Weber</strong> - <em>The Protestant Ethic and the Spirit of Capitalism</em> - Sociology of modernity and rationalization</li>
+                        <li><strong>Claude Lévi-Strauss</strong> - <em>Structural Anthropology (selections)</em> - Universal patterns in human culture</li>
+                        <li><strong>Margaret Mead</strong> - <em>Coming of Age in Samoa</em> - Cultural anthropology and relativism</li>
+                    </ul>
+                    <h5>Political Philosophy & Economics</h5>
+                    <ol>
+                        <li><strong>Plato</strong> - <em>Republic (complete)</em> - Justice, ideal state, and political philosophy</li>
+                        <li><strong>Aristotle</strong> - <em>Politics</em> - Classical political theory and constitutions</li>
+                        <li><strong>Thomas Hobbes</strong> - <em>Leviathan (key sections)</em> - Social contract theory and sovereignty</li>
+                        <li><strong>John Locke</strong> - <em>Two Treatises of Government</em> - Classical liberalism and natural rights</li>
+                        <li><strong>Adam Smith</strong> - <em>The Wealth of Nations (key sections)</em> - Economic theory and market mechanisms</li>
+                        <li><strong>Karl Marx</strong> - <em>Das Kapital (Volume I, selections)</em> - Critique of political economy</li>
+                        <li><strong>John Maynard Keynes</strong> - <em>The General Theory of Employment, Interest and Money</em> - Macroeconomic theory</li>
+                        <li><strong>Ibn Khaldun</strong> - <em>The Muqaddimah (selections)</em> - Islamic social science and historiography</li>
+                        <li><strong>Kautilya (Chanakya)</strong> - <em>Arthashastra (selections)</em> - Indian political science and statecraft</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- YEAR 4 -->
+        <div class="collapsible-section year-panel">
+            <div class="section-header">
+                <h2>YEAR 4: MODERN FRONTIERS</h2>
+                 <i class="icon fas fa-chevron-down"></i>
+            </div>
+            <div class="section-content">
+                 <div class="content-wrapper">
+                    <h3>Contemporary Logic, Quantum Physics, and Global Thought</h3>
+                    <h4>Cutting-Edge Logic & Mathematics (Months 37-44)</h4>
+                    <h5>Contemporary & Applied Logic Systems</h5>
+                    <ol>
+                        <li><strong>Melvin Fitting</strong> - <em>First-Order Modal Logic</em> - Advanced modal proof systems</li>
+                        <li><strong>Jaakko Hintikka</strong> - <em>Knowledge and Belief</em> - Epistemic logic frameworks</li>
+                        <li><strong>Jean-Yves Girard</strong> - <em>Linear Logic</em> - Resource-sensitive reasoning</li>
+                        <li><strong>Birkhoff & von Neumann</strong> - <em>The Logic of Quantum Mechanics</em> - Quantum logical structures</li>
+                        <li><strong>Lotfi Zadeh</strong> - <em>Fuzzy Sets and Fuzzy Logic</em> - Continuous truth values and approximate reasoning</li>
+                        <li><strong>Richard Routley & Val Plumwood</strong> - <em>Relevant Logics and Their Rivals</em> - Relevance logic systems</li>
+                        <li><strong>Dov Gabbay</strong> - <em>Labelled Deductive Systems</em> - Modern proof theory</li>
+                        <li><strong>Saunders Mac Lane & Ieke Moerdijk</strong> - <em>Sheaves in Geometry and Logic</em> - Topos theory and categorical logic</li>
+                        <li><strong>Robert Harper</strong> - <em>Practical Foundations for Programming Languages</em> - Type theory applications</li>
+                        <li><strong>The Univalent Foundations Program</strong> - <em>Homotopy Type Theory</em> - Modern constructive foundations</li>
+                    </ol>
+
+                    <p><strong>Advanced Mathematics (Months 45-48)</strong></p>
+                    <ul>
+                        <li><strong>Walter Rudin</strong> - <em>Principles of Mathematical Analysis</em> - Advanced real analysis</li>
+                        <li><strong>Andrey Kolmogorov</strong> - <em>Foundations of the Theory of Probability</em> - Rigorous probability theory</li>
+                        <li><strong>William Boyce & Richard DiPrima</strong> - <em>Elementary Differential Equations</em> - Differential equations methods</li>
+                        <li><strong>Joseph Rotman</strong> - <em>Advanced Modern Algebra</em> - Abstract algebraic structures</li>
+                    </ul>
+
+                    <h4>Modern Physics & Technology</h4>
+                    <ol>
+                        <li><strong>Werner Heisenberg</strong> - <em>Physics and Philosophy</em> - Quantum mechanics interpretation</li>
+                        <li><strong>Max Planck</strong> - <em>Scientific Autobiography and Other Papers</em> - Quantum theory origins</li>
+                        <li><strong>Claude Shannon</strong> - <em>A Mathematical Theory of Communication</em> - Information theory foundations</li>
+                        <li><strong>Norbert Wiener</strong> - <em>Cybernetics</em> - Systems theory and feedback mechanisms</li>
+                        <li><strong>Douglas Hofstadter</strong> - <em>Gödel, Escher, Bach (key chapters)</em> - Consciousness, computation, and self-reference</li>
+                        <li><strong>John von Neumann</strong> - <em>Mathematical Foundations of Quantum Mechanics</em> - Mathematical structure of quantum theory</li>
+                    </ol>
+
+                    <h4>Contemporary Philosophy & Global Thought</h4>
+                     <ol>
+                        <li><strong>John Rawls</strong> - <em>A Theory of Justice</em> - Modern political philosophy and distributive justice</li>
+                        <li><strong>Peter Singer</strong> - <em>Practical Ethics</em> - Applied ethical reasoning</li>
+                        <li><strong>Ludwig Wittgenstein</strong> - <em>Philosophical Investigations</em> - Language games and meaning</li>
+                        <li><strong>Daniel Dennett</strong> - <em>Consciousness Explained</em> - Philosophy of mind and cognitive science</li>
+                        <li><strong>Thomas Nagel</strong> - <em>What Is It Like to Be a Bat?</em> - The hard problem of consciousness</li>
+                        <li><strong>Alasdair MacIntyre</strong> - <em>After Virtue</em> - Modern virtue ethics revival</li>
+                        <li><strong>Rabindranath Tagore</strong> - <em>Nationalism</em> - Eastern perspective on modernity and universalism</li>
+                        <li><strong>Frantz Fanon</strong> - <em>The Wretched of the Earth</em> - Decolonization theory and psychology</li>
+                        <li><strong>Octavio Paz</strong> - <em>The Labyrinth of Solitude</em> - Latin American identity and modernity</li>
+                        <li><strong>Edward Said</strong> - <em>Orientalism</em> - Post-colonial criticism and knowledge production</li>
+                        <li><strong>Amartya Sen</strong> - <em>Development as Freedom</em> - Capabilities approach to human development</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+        <!-- YEAR 5 -->
+        <div class="collapsible-section year-panel">
+            <div class="section-header">
+                <h2>YEAR 5: SYNTHESIS & MASTERY</h2>
+                 <i class="icon fas fa-chevron-down"></i>
+            </div>
+            <div class="section-content">
+                <div class="content-wrapper">
+                    <h3>Integration, Original Research, and Cultural Completion</h3>
+                    <h4>Independent Research & Advanced Applications (Months 49-56)</h4>
+                    <p>The student will choose one major independent research project for original contribution in Logic, Mathematics, Philosophy, or an Interdisciplinary domain, alongside advanced application studies:</p>
+                    <ul>
+                        <li><strong>Harrison's</strong> - <em>Principles of Internal Medicine (overview)</em> - Clinical medicine and diagnostic reasoning</li>
+                        <li><strong>Tom L. Beauchamp & James F. Childress</strong> - <em>Principles of Biomedical Ethics</em> - Medical ethical frameworks</li>
+                        <li><strong>Jared Diamond</strong> - <em>Guns, Germs, and Steel</em> - Geographic determinism in human civilization</li>
+                        <li><strong>Yuval Noah Harari</strong> - <em>Sapiens: A Brief History of Humankind</em> - Synthetic history of human development</li>
+                        <li><strong>Steven Pinker</strong> - <em>The Better Angels of Our Nature</em> - Violence, progress, and human nature</li>
+                    </ul>
+
+                    <h4>Cultural Synthesis & Global Understanding (Months 57-60)</h4>
+                     <ol>
+                        <li><strong>Ernst Hans Gombrich</strong> - <em>The Story of Art</em> - Visual culture throughout history</li>
+                        <li><strong>Leonard Bernstein</strong> - <em>The Unanswered Question (Harvard lectures)</em> - Music, meaning, and communication</li>
+                        <li><strong>Joseph Campbell</strong> - <em>The Hero with a Thousand Faces</em> - Universal patterns in mythology</li>
+                        <li><strong>Personal Synthesis Project</strong> - A capstone project representing an original contribution to human knowledge</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- CULTURAL ENRICHMENT -->
+        <div class="collapsible-section">
+            <div class="section-header">
+                <h2>CULTURAL ENRICHMENT PROGRAM</h2>
+                 <i class="icon fas fa-chevron-down"></i>
+            </div>
+            <div class="section-content">
+                <div class="content-wrapper">
+                    <h3>Parallel Studies Throughout All Years</h3>
+                    <div class="cultural-grid">
+                        <div>
+                            <h5>Ancient & Classical Literature</h5>
+                            <ul>
+                                <li><strong>Homer</strong> - <em>The Iliad and The Odyssey</em></li>
+                                <li><strong>Murasaki Shikibu</strong> - <em>The Tale of Genji</em></li>
+                                <li><strong>Ferdowsi</strong> - <em>Shahnameh</em></li>
+                                <li><strong>Vyasa</strong> - <em>Mahabharata (key selections)</em></li>
+                                <li><strong>Anonymous</strong> - <em>Epic of Gilgamesh</em></li>
+                                <li><strong>Aeschylus, Sophocles, Euripides</strong> - <em>Key Tragedies</em></li>
+                                <li><strong>Virgil</strong> - <em>The Aeneid</em></li>
+                            </ul>
+                        </div>
+                         <div>
+                            <h5>Modern Global Literature</h5>
+                            <ul>
+                                <li><strong>Chinua Achebe</strong> - <em>Things Fall Apart</em></li>
+                                <li><strong>Gabriel García Márquez</strong> - <em>One Hundred Years of Solitude</em></li>
+                                <li><strong>Jorge Luis Borges</strong> - <em>Labyrinths</em></li>
+                                <li><strong>Italo Calvino</strong> - <em>Invisible Cities</em></li>
+                                <li><strong>Naguib Mahfouz</strong> - <em>Cairo Trilogy</em></li>
+                                <li><strong>Lu Xun</strong> - <em>The True Story of Ah Q</em></li>
+                                <li><strong>Wole Soyinka</strong> - <em>Death and the King's Horseman</em></li>
+                            </ul>
+                        </div>
+                         <div>
+                            <h5>Visual Arts & Architecture</h5>
+                             <ul>
+                                <li><strong>Ancient & Classical:</strong> Giza, Parthenon, Colosseum, Alhambra, Ajanta Caves, Forbidden City, Machu Picchu</li>
+                                <li><strong>Renaissance:</strong> Leonardo da Vinci, Michelangelo, Raphael</li>
+                                <li><strong>Modern & Contemporary:</strong> Picasso, Kandinsky, Hokusai, Ai Weiwei</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5>Music & Audio Arts</h5>
+                             <ul>
+                                <li><strong>Western Classical:</strong> Bach, Mozart, Beethoven, Stravinsky</li>
+                                <li><strong>World Traditions:</strong> Indian Raga, Chinese Opera, African Polyrhythms, Arabic Maqam, Gamelan</li>
+                                <li><strong>Popular & Contemporary:</strong> Blues, Jazz, Bossa Nova, Electronic</li>
+                            </ul>
+                        </div>
+                         <div>
+                            <h5>Film & Cinema</h5>
+                            <ul>
+                                <li><strong>Pioneers:</strong> Chaplin, Eisenstein, Lang</li>
+                                <li><strong>International Masters:</strong> Kurosawa, Bergman, Fellini, Ray, Sembène</li>
+                                <li><strong>Documentary:</strong> Sagan (Cosmos), Attenborough (Planet Earth)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SCIENTIFIC BREAKTHROUGHS -->
+        <div class="collapsible-section">
+            <div class="section-header">
+                <h2>ESSENTIAL SCIENTIFIC BREAKTHROUGHS</h2>
+                 <i class="icon fas fa-chevron-down"></i>
+            </div>
+            <div class="section-content">
+                <div class="content-wrapper">
+                    <h3>Papers and Discoveries that Changed Human Understanding</h3>
+                     <ol>
+                        <li><strong>Euclid:</strong> Proof of the infinitude of prime numbers (c. 300 BCE)</li>
+                        <li><strong>William Harvey:</strong> Discovery of blood circulation (1628)</li>
+                        <li><strong>Newton & Leibniz:</strong> Independent invention of calculus (c. 1670)</li>
+                        <li><strong>Gregor Mendel:</strong> Laws of heredity and genetic inheritance (1866)</li>
+                        <li><strong>James Clerk Maxwell:</strong> Electromagnetic field equations (1865)</li>
+                        <li><strong>Max Planck:</strong> Quantum hypothesis and energy quantization (1900)</li>
+                        <li><strong>Albert Einstein:</strong> Special (1905) and General (1915) Relativity</li>
+                        <li><strong>Alexander Fleming:</strong> Discovery of penicillin (1928)</li>
+                        <li><strong>Kurt Gödel:</strong> Incompleteness theorems showing limits of formal systems (1931)</li>
+                        <li><strong>Alan Turing:</strong> Universal Turing machine and computability theory (1936)</li>
+                        <li><strong>Claude Shannon:</strong> Mathematical theory of information and communication (1948)</li>
+                        <li><strong>Watson & Crick:</strong> DNA double helix structure (1953)</li>
+                        <li><strong>Tim Berners-Lee:</strong> Invention of the World Wide Web (1989)</li>
+                        <li><strong>Andrew Wiles:</strong> Proof of Fermat's Last Theorem (1995)</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- METHODOLOGY, PRIORITIES, METRICS (CONDENSED) -->
+        <div class="collapsible-section">
+            <div class="section-header">
+                <h2>Curriculum Framework & Methodology</h2>
+                <i class="icon fas fa-chevron-down"></i>
+            </div>
+            <div class="section-content">
+                <div class="content-wrapper">
+                    <h3>Guiding Principles & Priorities</h3>
+                    <ul>
+                        <li><strong>Logic & Mathematics (40%):</strong> Achieve maximum depth with no gaps, from classical foundations to contemporary systems. This is the non-negotiable core that enables rigorous thought in all other domains.</li>
+                        <li><strong>Sciences (30%):</strong> Gain comprehensive coverage of modern principles (Physics, Chemistry, Biology, Earth Sciences, Psychology, Medicine) with an emphasis on their empirical basis.</li>
+                        <li><strong>Philosophy & Humanities (20%):</strong> Develop cultural literacy and critical thinking by studying the most influential works from diverse global traditions.</li>
+                        <li><strong>Cultural Enrichment (10%):</strong> Integrate continuous exposure to global arts and narratives (literature, visual arts, music, film) in parallel with all other studies.</li>
+                    </ul>
+
+                    <h3>Optimized Study Methodology</h3>
+                    <h4>Daily Schedule (4-Hour Block)</h4>
+                    <ul>
+                        <li><strong>Hour 1: Core Logic/Mathematics</strong> - Maximum concentration, analytical work.</li>
+                        <li><strong>Hour 2: Sciences or Philosophy</strong> - Deep reading and conceptual analysis.</li>
+                        <li><strong>Hour 3: Cultural/Global Perspectives</strong> - Broad exposure and comparative analysis.</li>
+                        <li><strong>Hour 4: Integration & Synthesis</strong> - Actively connect new knowledge with previous learning, organize notes.</li>
+                    </ul>
+                    <h4>Active Learning Principles</h4>
+                    <ul>
+                        <li><strong>Eliminate Redundancy:</strong> Use single comprehensive sources and strategic selections, not repetitive material.</li>
+                        <li><strong>Socratic Questioning:</strong> Challenge every claim and assumption to build a robust mental model.</li>
+                        <li><strong>Synthesis Essays:</strong> Write weekly to integrate new knowledge across domains.</li>
+                        <li><strong>Practical Application:</strong> Connect abstract concepts to real-world examples.</li>
+                    </ul>
+
+                    <h3>Success Metrics & Assessment</h3>
+                    <h4>Year-by-Year Milestones</h4>
+                    <ul>
+                        <li><strong>Year 1:</strong> Master classical logic, basic math, and foundational science concepts.</li>
+                        <li><strong>Year 2:</strong> Master advanced logic, real analysis, and scientific methodology.</li>
+                        <li><strong>Year 3:</strong> Achieve comprehensive understanding of natural and human systems.</li>
+                        <li><strong>Year 4:</strong> Synthesize knowledge of cutting-edge developments and global thought.</li>
+                        <li><strong>Year 5:</strong> Produce an original contribution and achieve complete knowledge integration.</li>
+                    </ul>
+                     <h4>Final Outcome Criteria</h4>
+                    <ul>
+                        <li><strong>Expertise:</strong> Fluency in multiple logical systems; competence in advanced mathematics; deep scientific literacy; and broad cultural competence.</li>
+                        <li><strong>Ability:</strong> To synthesize knowledge across domains, conduct original research, critically evaluate any argument, and understand issues from multiple global viewpoints.</li>
+                    </ul>
+
+                     <h3>Curriculum Statistics</h3>
+                     <ul>
+                         <li><strong>Total Study Hours:</strong> ~7,300 hours</li>
+                         <li><strong>Core Texts & Papers:</strong> ~500 major works</li>
+                         <li><strong>Global Representation:</strong> Sources from all inhabited continents and major civilizations.</li>
+                         <li><strong>Chronological Scope:</strong> From 6th century BCE to contemporary research.</li>
+                     </ul>
+                </div>
+            </div>
+        </div>
+
+        <section class="final-conclusion">
+            <h2>Conclusion</h2>
+            <p>This curriculum represents a comprehensive approach to human knowledge that respects both the depth required for genuine expertise and the breadth necessary for wisdom. By anchoring the entire program in logical and mathematical rigor while systematically exploring all major domains of human understanding, students develop both the analytical tools and substantive knowledge needed to contribute meaningfully to human flourishing.</p>
+            <p>The ultimate goal is not just to know, but to understand - and through understanding, to contribute to the ongoing human project of comprehending our world and our place within it.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>KRISTOFFER</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const headers = document.querySelectorAll('.section-header');
+            const searchInput = document.getElementById('search-input');
+            const contentSections = document.querySelectorAll('.collapsible-section');
+            const toTopBtn = document.getElementById('toTopBtn');
+
+            // --- Collapsible Section Logic ---
+            headers.forEach(header => {
+                header.addEventListener('click', (e) => {
+                    // Prevent closing when a search result is clicked
+                    if (e.target.closest('mark')) return;
+
+                    const content = header.nextElementSibling;
+                    const isActive = header.classList.contains('active');
+
+                    // A true accordion effect (only one open at a time)
+                    // headers.forEach(h => {
+                    //     if (h !== header) {
+                    //         h.classList.remove('active');
+                    //         h.nextElementSibling.classList.remove('show');
+                    //     }
+                    // });
+
+                    // Allow multiple sections to be open
+                    if (!isActive) {
+                        header.classList.add('active');
+                        content.classList.add('show');
+                    } else {
+                        header.classList.remove('active');
+                        content.classList.remove('show');
+                    }
+                });
+            });
+
+            // Open the first section by default
+            const firstHeader = document.querySelector('.section-header');
+            if(firstHeader) {
+                firstHeader.classList.add('active');
+                firstHeader.nextElementSibling.classList.add('show');
+            }
+
+            // --- Back to Top Button Logic ---
+            window.onscroll = function() {
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    toTopBtn.style.display = "block";
+                    toTopBtn.style.opacity = "1";
+                } else {
+                    toTopBtn.style.opacity = "0";
+                    setTimeout(() => { toTopBtn.style.display = "none"; }, 300);
+                }
+            };
+
+            toTopBtn.addEventListener('click', () => {
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+
+            // --- Real-time Search Logic ---
+            let originalContent = new Map();
+            contentSections.forEach((section, index) => {
+                originalContent.set(index, section.innerHTML);
+            });
+
+            searchInput.addEventListener('keyup', function() {
+                const query = searchInput.value.toLowerCase().trim();
+
+                // Restore original content before a new search
+                contentSections.forEach((section, index) => {
+                    section.innerHTML = originalContent.get(index);
+                });
+                
+                // Re-attach event listeners after restoring HTML
+                document.querySelectorAll('.section-header').forEach(header => {
+                    header.addEventListener('click', handleSectionClick);
+                });
+
+                if (query.length < 2) {
+                    // Restore original state and default open section
+                    restoreDefaultView();
+                    return;
+                }
+
+                // Close all sections before showing search results
+                headers.forEach(h => {
+                    h.classList.remove('active');
+                    h.nextElementSibling.classList.remove('show');
+                });
+                
+                let resultsFound = false;
+
+                contentSections.forEach(section => {
+                    const contentWrapper = section.querySelector('.content-wrapper, .introduction');
+                    if (!contentWrapper) return;
+
+                    const textElements = contentWrapper.querySelectorAll('p, li, h3, h4, h5');
+                    let sectionHasMatch = false;
+
+                    textElements.forEach(el => {
+                        const text = el.innerText;
+                        if (text.toLowerCase().includes(query)) {
+                            sectionHasMatch = true;
+                            resultsFound = true;
+                            const regex = new RegExp(`(${query})`, 'gi');
+                            el.innerHTML = text.replace(regex, '<mark>$1</mark>');
+                        }
+                    });
+
+                    if (sectionHasMatch) {
+                        section.style.display = 'block';
+                        const header = section.querySelector('.section-header');
+                        if (header) {
+                            header.classList.add('active');
+                            header.nextElementSibling.classList.add('show');
+                        }
+                    } else {
+                         section.style.display = 'none';
+                    }
+                });
+                
+                // Show introduction regardless of search match
+                document.querySelector('.introduction').parentElement.style.display = 'block';
+            });
+            
+            function handleSectionClick(e) {
+                if (e.target.closest('mark')) return;
+                const header = e.currentTarget;
+                const content = header.nextElementSibling;
+                header.classList.toggle('active');
+                content.classList.toggle('show');
+            }
+
+            function restoreDefaultView() {
+                contentSections.forEach((section, index) => {
+                    section.style.display = 'block';
+                    section.innerHTML = originalContent.get(index);
+                });
+                
+                document.querySelectorAll('.section-header').forEach((h, i) => {
+                    const content = h.nextElementSibling;
+                    if (i === 0) { // Open first section
+                        h.classList.add('active');
+                        content.classList.add('show');
+                    } else {
+                        h.classList.remove('active');
+                        content.classList.remove('show');
+                    }
+                    h.addEventListener('click', handleSectionClick);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
